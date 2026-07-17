@@ -1,0 +1,216 @@
+/* ============================================================
+   FOOTER — white bg, navy + gold text
+   ============================================================ */
+
+.footer {
+  background: var(--white);
+  border-top: 3px solid var(--gold);
+  padding-top: clamp(60px, 8vw, 100px);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 240px 1.2fr 1fr 1fr;
+  gap: clamp(32px, 4vw, 64px);
+  padding-bottom: clamp(48px, 6vw, 72px);
+  border-bottom: 1px solid var(--line);
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer__logo-img {
+  width: 88px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.footer__brand-name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+}
+
+.footer__brand-tag {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.footer__brand-city {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.footer__social-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line);
+  display: grid;
+  place-items: center;
+  color: var(--navy);
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+.footer__social-icon:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--white);
+}
+
+.footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.footer__heading {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+  margin: 0;
+}
+
+.footer__addr {
+  font-size: 14.5px;
+  line-height: 1.9;
+  font-style: normal;
+  color: var(--ink-soft);
+}
+
+.footer__contacts {
+  display: grid;
+  gap: 14px;
+}
+
+.footer__contacts a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  color: var(--ink);
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+.footer__contacts a:hover { color: var(--gold); }
+
+.footer__contact-icon {
+  font-size: 15px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.footer__links {
+  display: grid;
+  gap: 13px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__links a,
+.footer__links button {
+  font-size: 14px;
+  color: var(--ink-soft);
+  text-align: left;
+  font-weight: 300;
+  font-family: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 0 0 18px;
+  position: relative;
+  display: block;
+  width: 100%;
+  transition: color 0.2s ease;
+}
+
+.footer__links a::before,
+.footer__links button::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gold);
+  font-size: 10px;
+}
+
+.footer__links a:hover,
+.footer__links button:hover { color: var(--navy); }
+
+/* ── Bold Ariar Strip ── */
+/* ── Ariar Credit ── */
+.footer__ariar {
+  border-top: 1px solid var(--line);
+  padding: 28px 0;
+  text-align: center;
+}
+
+.footer__ariar-text {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+}
+
+.footer__ariar-link {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: color 0.2s ease;
+}
+.footer__ariar-link:hover { color: var(--gold); }
+
+/* ── Copyright ── */
+.footer__bottom {
+  background: var(--navy);
+  padding: 16px 0;
+  text-align: center;
+}
+
+.footer__copy {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.35);
+}
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 44px); }
+}
+
+@media (max-width: 700px) {
+  .footer__ariar-inner { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .footer__ariar-cta { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 600px) {
+  .footer__grid { grid-template-columns: 1fr; gap: 36px; }
+  .footer__bottom { padding-bottom: calc(var(--mobile-nav-h) + 12px); }
+}

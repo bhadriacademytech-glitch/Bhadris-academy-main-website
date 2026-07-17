@@ -1,0 +1,81 @@
+/* ============================================================
+   EXPERIENCE — scroll-switching split section
+   ============================================================ */
+
+.experience { background: var(--white); }
+
+.experience__track { position: relative; }
+
+.experience__viewport {
+  position: sticky;
+  top: var(--header-h);
+  height: calc(100vh - var(--header-h));
+  min-height: 540px;
+  display: grid;
+  grid-template-columns: minmax(340px, 44%) 1fr;
+  overflow: hidden;
+}
+
+.experience__left {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 40px var(--pad-x);
+}
+
+.experience__title {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3.2vw, 42px);
+  font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gold);
+}
+
+.experience__lede {
+  margin: 18px 0 40px;
+  max-width: 400px;
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+
+.experience__list { display: grid; }
+
+.experience__item {
+  text-align: left;
+  padding: 17px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--navy);
+  transition: color 0.3s ease;
+}
+.experience__item.active { color: var(--gold); }
+.experience__item:last-child { border-bottom-color: var(--gold); }
+
+.experience__right { position: relative; }
+
+.experience__img {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+.experience__img.active { opacity: 1; }
+
+.experience__caption {
+  position: absolute; left: 0; bottom: 0; z-index: 2;
+  background: rgba(14,28,58,0.78);
+  color: var(--white);
+  padding: 16px 24px;
+  max-width: 480px;
+  font-size: 14px;
+}
+
+@media (max-width: 880px) {
+  .experience__viewport {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    min-height: 0;
+  }
+  .experience__left { padding-top: 48px; }
+  .experience__lede { margin-bottom: 22px; }
+  .experience__right { min-height: 300px; }
+}

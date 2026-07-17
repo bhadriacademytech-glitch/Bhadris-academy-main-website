@@ -1,0 +1,210 @@
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  background: var(--white);
+  box-shadow: 0 2px 18px rgba(20, 38, 75, 0.08);
+  overflow: visible;
+}
+
+.header__inner {
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 var(--pad-x);
+}
+
+/* ── Nav links ── */
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 2.4vw, 40px);
+  flex: 1;
+}
+.header__nav--left  { justify-content: flex-end;  padding-right: 110px; }
+.header__nav--right { justify-content: flex-start; padding-left:  110px; }
+
+.header__nav a,
+.header__nav button {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--navy);
+  padding: 4px 0;
+  position: relative;
+  white-space: nowrap;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+.header__nav a::after,
+.header__nav button::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 0; height: 2px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+.header__nav a:hover::after,
+.header__nav button:hover::after { width: 100%; }
+.header__nav .nav-accent { color: var(--gold); font-weight: 600; }
+
+/* ── Hanging logo panel (desktop) ── */
+.header__logo {
+  position: absolute;
+  top: 84%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  width: 140px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.header__logo-img {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Text crest fallback (when LOGO_SRC = null) */
+.header__crest {
+  width: 54px; height: 54px;
+  border: 1px solid var(--gold-soft);
+  display: grid; place-items: center;
+  font-family: var(--font-display);
+  font-size: 30px; font-weight: 600;
+  color: var(--gold-soft);
+  transform: rotate(45deg);
+  margin-bottom: 10px;
+}
+.header__crest span { transform: rotate(-45deg); display: block; }
+
+.header__name {
+  font-family: var(--font-display);
+  font-size: 14px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  line-height: 1.3; text-align: center;
+  color: var(--white);
+}
+.header__tag {
+  font-size: 8px; letter-spacing: 0.44em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+  margin-top: 4px;
+}
+
+/* ── Burger (desktop: hidden) ── */
+.header__burger {
+  display: none;
+  background: none; border: none; cursor: pointer;
+  width: 42px; height: 42px;
+  margin-left: auto;
+  z-index: 130;
+}
+.header__burger span {
+  display: block; width: 24px; height: 2px;
+  background: var(--navy); margin: 5px auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.header__burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.header__burger.open span:nth-child(2) { opacity: 0; }
+.header__burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Mobile drawer ── */
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  background: var(--navy);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  animation: fade 0.25s ease both;
+}
+
+.drawer__close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 28px;
+  background: none;
+  border: 1.5px solid rgba(255,255,255,0.25);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 130;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.drawer__close:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--white);
+}
+
+.drawer a,
+.drawer button {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--white);
+  padding: 10px 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  text-align: center;
+}
+.drawer a:hover,
+.drawer button:hover { color: var(--gold-soft); }
+/* ── Mobile overrides ── */
+@media (max-width: 1020px) {
+  body { padding-bottom: var(--mobile-nav-h); }
+
+  .header__inner {
+    justify-content: center;
+    padding: 0;
+  }
+  .header__nav { display: none; }
+
+  /* Keep hanging logo panel on mobile — smaller, navy box */
+  .header__logo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: calc(var(--header-h) + 60px);
+    padding: 12px 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header__logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .header__burger { display: none; } /* bottom nav opens drawer instead */
+}

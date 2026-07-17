@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 180" fill="none">
+  <!-- Diamond border -->
+  <rect x="40" y="18" width="80" height="80" rx="2"
+        fill="none" stroke="#c6a75e" stroke-width="1.5"
+        transform="rotate(45 80 58)"/>
+  <!-- B letterform -->
+  <text x="80" y="75" font-family="Georgia, 'Times New Roman', serif"
+        font-size="52" font-weight="700" fill="#c6a75e"
+        text-anchor="middle" dominant-baseline="middle">B</text>
+  <!-- Academy name -->
+  <text x="80" y="128" font-family="Georgia, serif"
+        font-size="13" font-weight="600" fill="#ffffff"
+        letter-spacing="5" text-anchor="middle"
+        text-transform="uppercase">BHADRI'S</text>
+  <text x="80" y="148" font-family="Georgia, serif"
+        font-size="13" font-weight="600" fill="#ffffff"
+        letter-spacing="5" text-anchor="middle">ACADEMY</text>
+  <!-- Tagline -->
+  <text x="80" y="166" font-family="'Jost', Arial, sans-serif"
+        font-size="7.5" fill="#c6a75e" letter-spacing="4"
+        text-anchor="middle">BENGALURU</text>
+</svg>
