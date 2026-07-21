@@ -12,7 +12,7 @@ export default function Admissions() {
         <div className="reveal">
           <h2 className="admissions__title">Admissions</h2>
           <p className="admissions__text">
-            Bhadri's Academy welcomes students from Class 01 to Class 10
+            Bhadri's Academy welcomes students from Pre-Nursery to Class 10
             throughout the academic year. Start with a visit or a free demo
             class — then enrol with confidence.
           </p>

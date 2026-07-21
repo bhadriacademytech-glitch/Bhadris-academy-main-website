@@ -63,8 +63,7 @@ export default function Footer() {
             <p className="footer__brand-tag">Right Method · Right Results</p>
             <p className="footer__brand-city">Bengaluru</p>
             <div className="footer__socials">
-              <a href="https://instagram.com/bhadrisacademy" target="_blank" rel="noreferrer" aria-label="Instagram" className="footer__social-icon"><IgIcon /></a>
-              <a href="https://facebook.com/bhadrisacademy" target="_blank" rel="noreferrer" aria-label="Facebook" className="footer__social-icon"><FbIcon /></a>
+              <a href="https://www.instagram.com/bhadris_academy/" target="_blank" rel="noreferrer" aria-label="Instagram" className="footer__social-icon"><IgIcon /></a>
               <a href="https://youtube.com/@bhadrisacademy" target="_blank" rel="noreferrer" aria-label="YouTube" className="footer__social-icon"><YtIcon /></a>
               <a href="https://linkedin.com/company/bhadrisacademy" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="footer__social-icon"><LiIcon /></a>
             </div>
@@ -92,7 +91,7 @@ export default function Footer() {
           <div className="footer__col">
             <h4 className="footer__heading">Programmes</h4>
             <ul className="footer__links">
-              <li><a href="#learning">Early Years (Class 01 – 1)</a></li>
+              <li><a href="#learning">Early Years (Pre-Nursery – 1)</a></li>
               <li><a href="#learning">Primary School (1 – 5)</a></li>
               <li><a href="#learning">Middle School (5 – 8)</a></li>
               <li><a href="#learning">Board Prep (9 – 10)</a></li>

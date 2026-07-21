@@ -66,7 +66,7 @@ export default function VisitModal() {
             Student's Class
             <select value={f.grade} onChange={set('grade')}>
               <option value="">Select class</option>
-              <option>Class 01 / Nursery</option>
+              <option>Pre-Nursery / Nursery</option>
               <option>LKG / UKG</option>
               {Array.from({ length: 10 }, (_, i) => (
                 <option key={i + 1} value={`Class ${i + 1}`}>Class {i + 1}</option>

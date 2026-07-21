@@ -2,8 +2,6 @@ import { useState } from 'react'
 import { SITE } from '../config.js'
 import { useModal } from '../ModalContext.jsx'
 
-/* Gold vertical tab fixed to the right edge (always visible) +
-   slide-in enquiry panel. Sends the enquiry to WhatsApp. */
 export default function EnquirePanel() {
   const { enquiryOpen, setEnquiryOpen } = useModal()
   const [f, setF] = useState({ name: '', phone: '', grade: '', message: '' })
@@ -13,12 +11,12 @@ export default function EnquirePanel() {
     const text = [
       "*Enquiry — Bhadri's Academy*",
       '',
-      `Name: ${f.name || '-'}`,
-      `Phone: ${f.phone || '-'}`,
-      `Class: ${f.grade || '-'}`,
-      `Message: ${f.message || '-'}`,
+      'Name: ' + (f.name || '-'),
+      'Phone: ' + (f.phone || '-'),
+      'Class: ' + (f.grade || '-'),
+      'Message: ' + (f.message || '-'),
     ].join('\n')
-    window.open(`https://wa.me/${SITE.whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank')
+    window.open('https://wa.me/' + SITE.whatsappNumber + '?text=' + encodeURIComponent(text), '_blank')
   }
 
   return (
@@ -27,7 +25,7 @@ export default function EnquirePanel() {
         Enquire Now
       </button>
 
-      <div className={`epanel-wrap ${enquiryOpen ? 'open' : ''}`} aria-hidden={!enquiryOpen}>
+      <div className={'epanel-wrap ' + (enquiryOpen ? 'open' : '')} aria-hidden={!enquiryOpen}>
         <div className="epanel-scrim" onClick={() => setEnquiryOpen(false)} />
         <div className="epanel" role="dialog" aria-modal="true" aria-label="Enquiry form">
           <button className="modal-x" onClick={() => setEnquiryOpen(false)} aria-label="Close">✕</button>
@@ -49,10 +47,10 @@ export default function EnquirePanel() {
               Student's Class
               <select value={f.grade} onChange={set('grade')}>
                 <option value="">Select class</option>
-                <option>Class 01 / Nursery</option>
+                <option>Pre-Nursery / Nursery</option>
                 <option>LKG / UKG</option>
                 {Array.from({ length: 10 }, (_, i) => (
-                  <option key={i + 1} value={`Class ${i + 1}`}>Class {i + 1}</option>
+                  <option key={i + 1} value={'Class ' + (i + 1)}>Class {i + 1}</option>
                 ))}
               </select>
             </label>
@@ -60,10 +58,27 @@ export default function EnquirePanel() {
               Message
               <textarea value={f.message} onChange={set('message')} placeholder="Subjects needed, preferred timings…" />
             </label>
+
             <button type="button" className="btn btn--navy" onClick={send}>
               Send on WhatsApp <span className="arrow">→</span>
             </button>
+
             <p className="form__note">Opens WhatsApp with your enquiry pre-filled — just press send.</p>
+
+            {/* ── OR divider ── */}
+            <div className="epanel__divider">
+              <span>or</span>
+            </div>
+
+            {/* ── Call directly button ── */}
+            <a href={'tel:+919632645625'} className="epanel__call">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+              Call Directly Now
+            </a>
+            <p className="form__note" style={{ textAlign: 'center' }}>+91 96326 45625</p>
+
           </div>
         </div>
       </div>

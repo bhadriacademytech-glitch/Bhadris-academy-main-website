@@ -13,8 +13,7 @@ export const SITE = {
   ],
   // Replace with your own hero video: put a file at /public/hero.mp4
   // and change this to '/hero.mp4'
-  heroVideo:
-    'public/hero2.mp4',
+  heroVideo: 'https://res.cloudinary.com/pcgf67hy/video/upload/v1784612582/Cinematic_educational_institut_lzbhkq.mp4',
 }
 
 /* Vertical (9:16) videos — founder / academy reels.

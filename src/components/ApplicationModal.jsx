@@ -187,7 +187,7 @@ export default function ApplicationModal() {
                     <div className="af__select-wrap">
                       <select className="af__input af__select" value={f.applyClass} onChange={set('applyClass')} onBlur={blur('applyClass')}>
                         <option value="">Select class</option>
-                        <option>Class 01</option>
+                        <option>Pre-Nursery</option>
                         <option>Nursery</option>
                         <option>LKG</option>
                         <option>UKG</option>

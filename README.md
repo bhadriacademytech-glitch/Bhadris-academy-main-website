@@ -1,7 +1,7 @@
 # Bhadri's Academy — Website v2 (React + Vite)
 
 Premium single-page website for Bhadri's Academy, Bengaluru — tuitions from
-Class 01 to 10th Standard. White base, navy/gold/blue accents, elegant
+Pre-Nursery to 10th Standard. White base, navy/gold/blue accents, elegant
 serif headlines (Cormorant Garamond) with letterspaced Jost.
 
 ## Quick start
@@ -19,7 +19,7 @@ Deploys straight to Vercel/Netlify (auto-detects Vite).
 1. **Header** — white bar, split nav, hanging navy logo panel (replace the
    crest in `Header.jsx` with the real Bhadri's Academy logo image)
 2. **Hero** — fullscreen video with poster fallback
-3. **Learning** — feature card + thumbnails; 3 programs (Class 01–1,
+3. **Learning** — feature card + thumbnails; 3 programs (Pre-Nursery–1,
    1–5, 5–10). Clicking a card opens a clean explainer popup
 4. **Admissions** — navy band. "Enrol Now" opens the full-window
    Application Form (triggered from anywhere on the site); "Request a

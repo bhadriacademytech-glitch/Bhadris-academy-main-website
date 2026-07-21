@@ -3,7 +3,21 @@ import { useModal } from '../ModalContext.jsx'
 import useReveal from './useReveal.js'
 
 export const PROGRAMS = [
-  
+  {
+    grades: 'Pre-Nursery – Class 1',
+    title: 'Early Years',
+    short: 'A gentle, joyful start — phonics, numbers and confidence built through play and patient attention.',
+    text: 'The earliest years decide how a child feels about learning for life. Our Early Years batches keep things warm, playful and unhurried — children learn phonics, early reading, writing readiness and number sense through activities, rhymes and games, never pressure.',
+    subjects: ['Phonics & Reading', 'Writing Readiness', 'Numbers', 'Rhymes & Activities'],
+    points: [
+      'Very small groups with individual attention',
+      'Play-based, activity-led sessions',
+      'Gentle school-readiness preparation',
+      'Regular updates to parents',
+    ],
+    img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=70',
+    color: '#c6a75e',
+  },
   {
     grades: 'Class 1 – Class 5',
     title: 'Primary School',
@@ -54,7 +68,6 @@ export default function Learning() {
 
         <div className="learning__feature reveal">
 
-          {/* Background images */}
           {PROGRAMS.map((p, i) => (
             <div
               key={p.title}
@@ -66,7 +79,6 @@ export default function Learning() {
             />
           ))}
 
-          {/* Left body text */}
           <div className="learning__feature-body">
             <p className="learning__feature-grades">{f.grades}</p>
             <h3 className="learning__feature-title">{f.title}</h3>
@@ -80,7 +92,6 @@ export default function Learning() {
             </button>
           </div>
 
-          {/* Thumbnail strip */}
           <div className="learning__thumbs">
             {PROGRAMS.map((p, i) => (
               <button
