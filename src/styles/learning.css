@@ -4,19 +4,18 @@
 
 .learning {
   background: var(--white);
-  padding: clamp(76px, 9vw, 120px) 0;
+  padding: clamp(60px, 8vw, 100px) 0 0;  /* ← remove bottom padding, thumbs handle it */
 }
 
 /* ── Feature card ── */
 .learning__feature {
-  margin-top: clamp(32px, 5vw, 56px);
+  margin-top: clamp(28px, 4vw, 48px);
   position: relative;
   isolation: isolate;
   color: var(--white);
   overflow: hidden;
 }
 
-/* ── Background images ── */
 .learning__feature-img {
   position: absolute;
   inset: 0;
@@ -33,9 +32,9 @@
   z-index: -1;
   background: linear-gradient(
     to bottom,
-    rgba(10, 20, 40, 0.55) 0%,
-    rgba(10, 20, 40, 0.75) 60%,
-    rgba(10, 20, 40, 0.92) 100%
+    rgba(10, 20, 40, 0.45) 0%,
+    rgba(10, 20, 40, 0.65) 50%,
+    rgba(10, 20, 40, 0.90) 100%
   );
 }
 
@@ -43,16 +42,17 @@
 .learning__feature-body {
   padding: clamp(28px, 5vw, 64px) clamp(20px, 4vw, 56px);
   max-width: 560px;
-  min-height: clamp(360px, 45vw, 520px);
+  min-height: clamp(340px, 40vw, 480px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  padding-bottom: clamp(200px, 22vw, 240px); /* ← space for absolute thumbs */
 }
 
 .learning__feature-grades {
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.34em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--gold-soft);
   margin-bottom: 10px;
@@ -61,20 +61,20 @@
 
 .learning__feature-title {
   font-family: var(--font-display);
-  font-size: clamp(28px, 5vw, 52px);
+  font-size: clamp(26px, 4.5vw, 50px);
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   line-height: 1.1;
   margin-bottom: 14px;
 }
 
 .learning__feature-text {
-  font-size: clamp(13px, 1.6vw, 15.5px);
+  font-size: clamp(13px, 1.5vw, 15px);
   color: rgba(255, 255, 255, 0.88);
   line-height: 1.7;
   margin-bottom: 22px;
-  max-width: 480px;
+  max-width: 460px;
 }
 
 /* ── Square arrow ── */
@@ -96,9 +96,10 @@
   border-color: var(--gold);
 }
 
-/* ── Thumbnails — DESKTOP (absolute bottom right) ── */
+/* ── Thumbnails — 4 across, pinned to bottom ── */
 .learning__thumbs {
   position: absolute;
+  left: 0;
   right: 0;
   bottom: 0;
   display: flex;
@@ -107,7 +108,8 @@
 }
 
 .lthumb {
-  width: 210px;
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   background: none;
@@ -118,119 +120,98 @@
 }
 
 .lthumb__img {
-  height: 130px;
+  height: 120px;
   background-size: cover;
   background-position: center;
   transition: transform 0.4s ease;
   border-bottom: 3px solid transparent;
   overflow: hidden;
 }
-.lthumb:hover .lthumb__img { transform: scale(1.04); }
+.lthumb:hover .lthumb__img  { transform: scale(1.04); }
 .lthumb.active .lthumb__img { border-bottom-color: var(--gold-bright); }
 
-/* ── Label bar ── */
+/* ── Label bar — KEY FIX ── */
 .lthumb__label {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
-  padding: 13px 14px;
+  gap: 6px;
+  padding: 12px 10px;
   background: #0a1829;
-  border-left: 4px solid var(--gold);
-  min-height: 72px;
+  border-left: 3px solid var(--gold);
+  min-height: 64px;
   transition: background 0.3s ease;
 }
-.lthumb:hover .lthumb__label { background: #12264a; }
+.lthumb:hover .lthumb__label  { background: #122040; }
 .lthumb.active .lthumb__label {
   background: var(--navy);
   border-left-color: var(--gold-bright);
 }
 
-.lthumb__label-content {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  min-width: 0;
-}
-
+/* ── Label text — fixed to never overflow ── */
 .lthumb__label-text {
   font-family: var(--font-sans);
-  font-size: 12.5px;
+  font-size: 10px;           /* ← smaller so all 4 labels fit */
   font-weight: 800;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.06em;   /* ← reduced so text doesn't expand too wide */
   text-transform: uppercase;
   color: #ffffff;
   display: block;
-  line-height: 1.2;
-  white-space: normal;
+  line-height: 1.4;
   word-break: break-word;
-}
-
-.lthumb__label-grades {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--gold-soft);
-  display: block;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  flex: 1;
+  min-width: 0;
 }
 
 .lthumb__arrow {
   color: var(--gold);
-  font-size: 16px;
+  font-size: 13px;
   flex-shrink: 0;
   transition: transform 0.3s ease;
 }
-.lthumb:hover .lthumb__arrow { transform: translateX(4px); }
+.lthumb:hover .lthumb__arrow { transform: translateX(3px); }
 
 /* ============================================================
    RESPONSIVE
    ============================================================ */
 
 /* ── Tablet ── */
-@media (max-width: 1060px) {
+@media (max-width: 900px) {
   .learning__feature-body {
-    min-height: clamp(300px, 40vw, 420px);
+    min-height: clamp(260px, 38vw, 380px);
+    padding-bottom: clamp(190px, 24vw, 220px);
   }
 
-  .learning__thumbs {
-    position: static;
-    width: 100%;
-  }
-
-  .lthumb {
-    flex: 1;
-    width: auto;
-    min-width: 0;
-  }
-
-  .lthumb__img { height: 110px; }
-  .lthumb__label { min-height: 66px; padding: 11px 12px; }
-  .lthumb__label-text { font-size: 11px; }
+  .lthumb__img        { height: 100px; }
+  .lthumb__label      { min-height: 58px; padding: 10px 8px; }
+  .lthumb__label-text { font-size: 9px; letter-spacing: 0.04em; }
+  .lthumb__arrow      { font-size: 11px; }
 }
 
-/* ── Mobile ── */
-@media (max-width: 640px) {
+/* ── Mobile — stack vertically ── */
+@media (max-width: 600px) {
   .learning__feature-body {
-    min-height: 300px;
-    padding: 24px 18px 20px;
+    min-height: 200px;
+    padding: 20px 16px 16px;
+    padding-bottom: 16px;
   }
 
-  /* Stack thumbs VERTICALLY — full width rows */
   .learning__thumbs {
-    flex-direction: column;
     position: static;
+    flex-direction: column;
     width: 100%;
   }
 
   .lthumb {
     width: 100%;
-    flex-direction: row;  /* image left, label right */
+    flex-direction: row;
   }
 
   .lthumb__img {
-    width: 100px;
-    height: 80px;
+    width: 90px;
+    height: 70px;
     flex-shrink: 0;
     border-bottom: none;
     border-right: 3px solid transparent;
@@ -242,25 +223,23 @@
 
   .lthumb__label {
     flex: 1;
-    min-height: 80px;
-    border-left: 4px solid var(--gold);
-    padding: 12px 14px;
+    min-height: 70px;
+    border-left: 3px solid var(--gold);
+    padding: 10px 12px;
   }
   .lthumb.active .lthumb__label { border-left-color: var(--gold-bright); }
 
-  .lthumb__label-text { font-size: 12px; letter-spacing: 0.12em; }
-  .lthumb__label-grades { font-size: 9.5px; }
-  .lthumb__arrow { font-size: 14px; }
+  .lthumb__label-text { font-size: 11px; letter-spacing: 0.08em; }
+  .lthumb__arrow      { font-size: 13px; }
 }
 
 /* ── Small mobile ── */
-@media (max-width: 400px) {
-  .learning__feature-title { font-size: clamp(22px, 7vw, 30px); }
+@media (max-width: 380px) {
+  .learning__feature-title { font-size: clamp(20px, 7vw, 28px); }
   .learning__feature-text  { font-size: 13px; }
-
-  .lthumb__img { width: 80px; height: 72px; }
-  .lthumb__label { padding: 10px 12px; min-height: 72px; }
-  .lthumb__label-text { font-size: 11px; }
+  .lthumb__img             { width: 76px; height: 64px; }
+  .lthumb__label           { padding: 8px 10px; min-height: 64px; }
+  .lthumb__label-text      { font-size: 10px; }
 }
 
 /* ============================================================

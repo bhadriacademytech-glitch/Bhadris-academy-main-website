@@ -3,17 +3,17 @@ import { useEffect, useRef, useState } from 'react'
 const ITEMS = [
   {
     label: 'Beyond Learning',
-    caption: 'Values, discipline and steady study habits — we shape students, not just scores.',
+    caption: "Confidence, communication and the discipline to sit down and study without being told twice — that's what stays with a child long after the exam is over.",
     img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=70',
   },
   {
     label: 'Our Facilities',
-    caption: 'Clean, well-equipped classrooms across two Bengaluru branches — calm spaces built for focus.',
+    caption: "Clean, well-lit classrooms across two Bengaluru branches — a dedicated board for every batch and a space built for focus, not for show.",
     img: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1600&q=70',
   },
   {
     label: 'Our Faculty',
-    caption: 'Qualified, patient teachers who know every student in the batch by name.',
+    caption: "Every teacher here is chosen for patience as much as subject mastery. A strict 1:12 ratio means they know each child's gaps by name, not by roll number.",
     img: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1600&q=70',
   },
 ]

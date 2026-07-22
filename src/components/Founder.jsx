@@ -13,8 +13,8 @@ const WHY = [
   },
   {
     num: '03',
-    title: 'Small Batch — 10:1 Ratio',
-    text: 'A strict 10-student maximum per batch means every child gets direct attention from the teacher every single session. No hiding, no falling behind.',
+    title: 'Small Batch — 12:1 Ratio',
+    text: 'A strict 12-student maximum per batch means every child gets direct attention from the teacher every single session. No hiding, no falling behind.',
   },
   {
     num: '04',
@@ -46,20 +46,14 @@ export default function Founder() {
           <div className="about__story">
             <h2 className="about__big-title">About Bhadri's Academy</h2>
             <p className="about__para">
-              Bhadri's Academy started in Bengaluru with a single classroom
-              and a clear purpose: give every child the kind of focused,
-              personal attention that big tuition centres simply cannot.
+              Bhadri's Academy started in Bengaluru with a single classroom and a clear purpose: give every child the kind of focused, personal attention that large coaching centres simply cannot.
             </p>
             <p className="about__para">
-              Five years and two branches later, that purpose has not changed.
-              From Pre-Nursery to Class 10 — State Board, CBSE and ICSE — we
-              sit beside every child, understand where they are struggling
-              and work with them until they are not.
+              Five years and two branches later, that purpose hasn't changed. From Pre-Nursery to Class 10 — State Board, CBSE, ICSE, IB and IGCSE — we sit beside every child, understand where they're struggling, and work with them until they're not.
             </p>
             <p className="about__para">
-              The families who trust us do so because they see real progress —
-              not just in marks, but in confidence, in discipline and in the
-              way their child talks about studying.
+              The families who trust us do so because they see real progress — not just in marks, but in confidence, in discipline, and in the way their child talks about studying.
+
             </p>
             <div className="about__tag-row">
               <span className="about__tag">Bengaluru</span>
@@ -69,7 +63,7 @@ export default function Founder() {
             </div>
           </div>
 
-          
+
 
         </div>
 

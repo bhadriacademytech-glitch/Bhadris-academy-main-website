@@ -1,5 +1,5 @@
 /* ============================================================
-   HERO — fullscreen video
+   HERO — fullscreen video, iPhone safe, 100% responsive
    ============================================================ */
 
 .hero {
@@ -11,34 +11,52 @@
   display: flex;
   align-items: flex-end;
   color: var(--white);
+  background: #0a1829; /* fallback while video loads */
 }
 
-.hero__media,
-.hero__media video,
+/* ── Poster fallback ── */
 .hero__poster {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-}
-
-.hero__poster {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   background:
-    linear-gradient(rgba(14, 28, 58, 0.3), rgba(14, 28, 58, 0.3)),
-    url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1920&q=70")
+    linear-gradient(rgba(14, 28, 58, 0.35), rgba(14, 28, 58, 0.35)),
+    url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1920&q=70")
     center / cover no-repeat;
 }
 
+/* ── Video — direct element, fills frame perfectly ── */
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+
+  /* iOS Safari specific fixes */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* ── Scrim — only bottom fade for text readability ── */
 .hero__scrim {
-  position: absolute; inset: 0;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
   background: linear-gradient(
     to top,
-    rgba(14, 28, 58, 0.72) 0%,
-    rgba(14, 28, 58, 0.05) 55%
+    rgba(14, 28, 58, 0.75) 0%,
+    rgba(14, 28, 58, 0.15) 45%,
+    rgba(14, 28, 58, 0.0) 70%
   );
 }
 
+/* ── Content ── */
 .hero__content {
-  position: relative; z-index: 2;
+  position: relative;
+  z-index: 3;
   width: 100%;
   padding-bottom: clamp(56px, 9vh, 100px);
   text-align: center;
@@ -48,16 +66,22 @@
 .hero__title {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: clamp(38px, 6vw, 74px);
+  font-size: clamp(36px, 6vw, 74px);
   line-height: 1.08;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
-.hero__title em { font-style: italic; color: var(--gold-soft); }
+.hero__title em {
+  font-style: italic;
+  color: var(--gold-soft);
+}
 
 .hero__sub {
   margin: 16px auto 0;
   max-width: 560px;
-  font-size: 16.5px;
-  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(14px, 2vw, 16.5px);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.65;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero__actions {
@@ -71,6 +95,40 @@
 @keyframes rise {
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: none; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+  .hero {
+    height: calc(100svh - var(--header-h));
+    min-height: 500px;
+    align-items: center;
+  }
+
+  .hero__content {
+    padding-bottom: clamp(40px, 10vh, 80px);
+    padding-top: 20px;
+  }
+
+  .hero__title { font-size: clamp(30px, 8vw, 44px); }
+  .hero__sub   { font-size: 14.5px; max-width: 340px; }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero__actions .btn {
+    width: 220px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero__title { font-size: clamp(26px, 8vw, 36px); }
+  .hero__sub   { font-size: 13.5px; }
+  .hero__actions .btn { width: 100%; max-width: 280px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
