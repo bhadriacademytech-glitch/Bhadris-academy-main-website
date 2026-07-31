@@ -13,7 +13,7 @@ export const SITE = {
   ],
   // Replace with your own hero video: put a file at /public/hero.mp4
   // and change this to '/hero.mp4'
-  heroVideo: 'https://res.cloudinary.com/pcgf67hy/video/upload/v1784612582/Cinematic_educational_institut_lzbhkq.mp4',
+  heroVideo: 'https://res.cloudinary.com/pcgf67hy/video/upload/v1785495037/BA_Website_VT_lru16g.mov',
 }
 
 /* Vertical (9:16) videos — founder / academy reels.
@@ -34,13 +34,13 @@ export const PARENT_REELS = [
 
 
 export const GALLERY = [
-  { img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=70', label: 'Classroom Sessions', cls: 'gitem--w' },
-  { img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=70', label: 'Young Learners', cls: 'gitem--t' },
-  { img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=70', label: 'Board Prep', cls: '' },
-  { img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=70', label: 'Group Study', cls: '' },
-  { img: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=800&q=70', label: 'Our Faculty', cls: '' },
-  { img: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=70', label: 'Study Material', cls: '' },
-  { img: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1200&q=70', label: 'Achievers', cls: 'gitem--w' },
+  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1785495396/IMG_2252_mkoqfx.jpg', label: 'Classroom Sessions', cls: 'gitem--w' },
+  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1785495384/IMG_2251_tlhmy2.jpg', label: 'Young Learners', cls: 'gitem--t' },
+  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1785495383/IMG_2326_zhsmgn.jpg', label: 'Board Prep', cls: '' },
+  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1785495384/IMG_2327_okwxl6.jpg', label: 'Group Study', cls: '' },
+  // { img: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=800&q=70', label: 'Our Faculty', cls: '' },
+  // { img: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=70', label: 'Study Material', cls: '' },
+  // { img: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1200&q=70', label: 'Achievers', cls: 'gitem--w' },
 ]
 
 export const waLink = (text) =>
