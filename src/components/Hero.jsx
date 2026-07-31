@@ -10,10 +10,8 @@ export default function Hero() {
     const video = videoRef.current
     if (!video) return
 
-    /* Force play on iOS — iPhones sometimes block autoplay silently */
     const tryPlay = () => {
       video.play().catch(() => {
-        /* If autoplay blocked — video stays hidden, poster shows */
         video.style.opacity = '0'
       })
     }
@@ -30,10 +28,6 @@ export default function Hero() {
   return (
     <section className="hero" id="home">
 
-      {/* Poster — shows while video loads or if it fails on iOS */}
-      <div className="hero__poster" />
-
-      {/* Video — direct element, NOT wrapped in aria-hidden div */}
       <video
         ref={videoRef}
         className="hero__video"
@@ -42,9 +36,15 @@ export default function Hero() {
         loop
         playsInline
         preload="auto"
+        poster={SITE.heroPoster}
         webkit-playsinline="true"
         x5-playsinline="true"
       >
+        <source
+          src="https://res.cloudinary.com/pcgf67hy/video/upload/f_auto,q_auto,w_640,c_fill/v1784612582/Cinematic_educational_institut_lzbhkq.mp4"
+          media="(max-width: 640px)"
+          type="video/mp4"
+        />
         <source src={SITE.heroVideo} type="video/mp4" />
       </video>
 
