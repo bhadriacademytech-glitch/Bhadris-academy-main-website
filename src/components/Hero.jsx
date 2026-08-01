@@ -1,19 +1,8 @@
 import { useEffect, useRef } from 'react'
 import { useModal } from '../ModalContext.jsx'
 
-/* Hero video — Cloudinary auto-transcodes/compresses via URL params:
-   f_auto = best format per browser (mp4/webm)
-   q_auto = smart compression
-   w_1280 = capped width, no need to ship 4K to a hero banner
-   Swap the public ID below if you upload a new video. */
-const HERO_VIDEO_DESKTOP =
-  'https://res.cloudinary.com/pcgf67hy/video/upload/f_auto,q_auto,w_1280,c_fill/v1785495037/BA_Website_VT_lru16g.mp4'
-
-const HERO_VIDEO_MOBILE =
-  'https://res.cloudinary.com/pcgf67hy/video/upload/f_auto,q_auto,w_640,c_fill/v1785495037/BA_Website_VT_lru16g.mp4'
-
-const HERO_POSTER =
-  'https://res.cloudinary.com/pcgf67hy/video/upload/f_auto,q_auto,w_1280,c_fill/v1785495037/BA_Website_VT_lru16g.jpg'
+const HERO_VIDEO =
+  'https://res.cloudinary.com/pcgf67hy/video/upload/v1785495037/BA_Website_VT_lru16g.mov'
 
 export default function Hero() {
   const { openApply, setEnquiryOpen } = useModal()
@@ -23,8 +12,6 @@ export default function Hero() {
     const video = videoRef.current
     if (!video) return
 
-    // Must be set as JS properties (not just HTML attributes) —
-    // iOS Safari sometimes ignores the attributes alone.
     video.muted = true
     video.playsInline = true
 
@@ -32,30 +19,24 @@ export default function Hero() {
       const playPromise = video.play()
       if (playPromise !== undefined) {
         playPromise.catch(() => {
-          // Autoplay blocked — poster stays visible, no broken UI
+          /* Autoplay blocked — poster div stays visible behind it */
         })
       }
     }
 
-    tryPlay()
-
-    // Retry on first user interaction if autoplay was blocked
-    const retryOnInteraction = () => {
+    if (video.readyState >= 2) {
       tryPlay()
-      window.removeEventListener('touchstart', retryOnInteraction)
-      window.removeEventListener('click', retryOnInteraction)
+    } else {
+      video.addEventListener('canplay', tryPlay, { once: true })
     }
-    window.addEventListener('touchstart', retryOnInteraction, { once: true })
-    window.addEventListener('click', retryOnInteraction, { once: true })
 
-    return () => {
-      window.removeEventListener('touchstart', retryOnInteraction)
-      window.removeEventListener('click', retryOnInteraction)
-    }
+    return () => video.removeEventListener('canplay', tryPlay)
   }, [])
 
   return (
     <section className="hero" id="home">
+
+      <div className="hero__poster" />
 
       <video
         ref={videoRef}
@@ -65,14 +46,10 @@ export default function Hero() {
         loop
         playsInline
         preload="auto"
-        poster={HERO_POSTER}
         webkit-playsinline="true"
         x5-playsinline="true"
-        disablePictureInPicture
-        disableRemotePlayback
       >
-        <source src={HERO_VIDEO_MOBILE} media="(max-width: 640px)" type="video/mp4" />
-        <source src={HERO_VIDEO_DESKTOP} type="video/mp4" />
+        <source src={HERO_VIDEO} type="video/mp4" />
       </video>
 
       <div className="hero__scrim" />
