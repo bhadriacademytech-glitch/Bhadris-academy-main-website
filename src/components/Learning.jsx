@@ -7,14 +7,15 @@ export const PROGRAMS = [
     grades: 'Pre-Nursery – Class 1',
     title: 'Early Years',
     label: 'Early Years (Pre-Nursery – 1)',
-    short: 'A gentle, joyful start — phonics, numbers and confidence built through play and patient attention.',
-    text: 'The earliest years decide how a child feels about learning for life. Our Early Years batches keep things warm, playful and unhurried — children learn phonics, early reading, writing readiness and number sense through activities, rhymes and games, never pressure.',
-    subjects: ['Phonics & Reading', 'Writing Readiness', 'Numbers', 'Rhymes & Activities'],
+    short: 'Building Learning Readiness Developing language, communication, early numeracy, motor skills, attention and positive learning habits.',
+    text: 'The early years are where children develop their first learning habits. Our programme focuses on language development, phonics, early numeracy, motor coordination, attention and social confidence through age-appropriate, activity-based learning.',
+    subjects: ['Language & Communication', 'Phonics & Pre-Reading', 'Early Numeracy', 'Pre-Writing & Motor Skills', 'Attention & Learning Habits'],
     points: [
-      'Very small groups with individual attention',
-      'Play-based, activity-led sessions',
-      'Gentle school-readiness preparation',
-      'Regular updates to parents',
+      'Small-group learning with individual attention',
+      'Activity-based and age-appropriate sessions',
+      'Progressive school-readiness development',
+      'Regular practice and reinforcement',
+      'Parent progress updates',
     ],
     img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=70',
     color: '#c6a75e',
@@ -23,14 +24,15 @@ export const PROGRAMS = [
     grades: 'Class 1 – Class 5',
     title: 'Primary School',
     label: 'Primary School (1 – 5)',
-    short: "Reading, writing and numbers become real skills here — steady practice, regular tests, and a teacher who notices the moment a concept hasn't clicked.",
-    text: 'Classes 1 to 5 are where foundations are laid — and where gaps begin if no one is watching. We build strong reading, clear handwriting, confident maths and steady study habits, with homework support so learning never piles up.',
-    subjects: ['English', 'Mathematics', 'EVS / Science', 'Kannada · Hindi'],
+    short: "Where foundational skills become lasting understanding — strengthening literacy, numeracy and conceptual clarity through purposeful practice, regular assessment and personalised academic support.",
+    text: "Strong foundations determine future academic progress. Our Primary programme strengthens literacy, numeracy, conceptual understanding and effective study habits through structured teaching, regular practice and individual academic support.",
+    subjects: ['English', 'Mathematics', 'EVS / Science','Social Studies', 'Kannada', ' Hindi'],
     points: [
+      'Concept-based teaching and guided practice',
       'Daily homework and revision support',
-      'Concept-first teaching, not rote memorising',
-      'Weekly practice tests with feedback',
-      'Honest progress reports to parents',
+      'Daily homework and revision support',
+      'Individual attention to learning gaps',
+      'Progress monitoring and parent updates',
     ],
     img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=70',
     color: '#2e6fb7',
@@ -39,30 +41,37 @@ export const PROGRAMS = [
     grades: 'Class 5 – Class 8',
     title: 'Middle School',
     label: 'Middle School (5 – 8)',
-    short: "Subjects get harder and habits matter more. We build the structure — organised notes, regular revision, steady practice — that carries a child through the toughest years of school.",
-    text: 'From Class 5 the syllabus deepens. Chapter-wise tests, revision cycles and a clear study plan keep every student on track.',
-    subjects: ['Mathematics', 'Science', 'Social Science', 'English'],
+    short: "Strengthening Conceptual Understanding - Developing subject knowledge, analytical thinking, problem-solving, written expression and effective study habits through structured instruction, application-based practice and regular ",
+    text: "A stage of deeper concepts, stronger reasoning and greater academic independence. Our programme develops conceptual clarity, subject application, problem-solving and disciplined study through structured teaching, regular assessment and targeted support.",
+    subjects: ['English', 'Mathematics', 'EVS / Science','Social Studies', 'Kannada', ' Hindi'],
     points: [
-      'Chapter-wise tests and revision cycles',
-      'Concept-first teaching approach',
-      'Homework and doubt-clearing support',
-      'Regular progress updates to parents',
+      'Concept-focused teaching and application',
+      'Chapter-wise practice and assessments',
+      'Structured revision and study planning',
+      'Homework and doubt-resolution support',
+      'Individual progress monitoring',
+      'Regular parent updates',
     ],
     img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=70',
     color: '#1a3a6b',
   },
   {
     grades: 'Class 9 – Class 10',
-    title: 'Board Prep',
+    title: 'Board Prepration',
     label: 'Board Prep (9 – 10)',
-    short: "This is where marks are made. Chapter-wise tests, mock boards, previous-year papers and a clear revision plan — everything aimed at walking into the exam hall ready.",
-    text: 'Classes 9 and 10 every mark matters. Our senior batches focus on full board preparation — chapter-wise tests, previous-year papers, revision cycles and mock boards that build real exam temperament.',
-    subjects: ['Mathematics', 'Science', 'Social Science', 'English'],
+    short: "Developing examination readiness through complete syllabus coverage, conceptual mastery, application-based practice, answer-writing, structured revision and continuous assessment—enabling students to identify gaps, improve performance and approach board examinations with confidence.",
+    text: "A structured board-preparation programme focused on conceptual mastery, application, answer-writing and examination readiness, with continuous assessment and targeted academic improvement.",
+   subjects: ['English', 'Mathematics', 'EVS / Science','Social Studies', 'Kannada', ' Hindi'],
     points: [
-      'SSLC · CBSE · ICSE board preparation',
-      'Chapter-wise tests and mock board exams',
-      'Previous-year paper practice',
-      'Dedicated doubt-clearing sessions',
+      'Complete and structured syllabus coverage',
+      'Conceptual and application-based learning',
+      'Chapter-wise and cumulative assessments',
+      'Mock examinations and performance analysis',
+      'Previous-year and competency-based practice',
+      'Targeted revision and doubt resolution',
+      'Individual progress tracking',
+      'Regular academic progress updates to parents',
+      
     ],
     img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1600&q=70',
     color: '#14264b',
@@ -79,11 +88,10 @@ export default function Learning() {
     <section className="learning" id="learning">
       <div className="container">
         <h2 className="sec-title reveal">Learning</h2>
-        <p className="sec-lede reveal">
-          Every stage of school asks something different of a child. Our
-          batches are organised by age and class so teaching, pace and
-          practice always match where your child is today.
-        </p>
+       <p className="sec-lede reveal">
+  Learning That Builds Understanding, Confidence, and Progress.
+  Every learner is different, Our teaching adapts to where they are today — and prepares them for what comes next.
+</p>
 
         <div className="learning__feature reveal">
 

@@ -4,32 +4,32 @@ const WHY = [
   {
     num: '01',
     title: 'Identification & Achievement',
-    text: 'We identify each student\'s strengths, weaknesses and learning gaps from day one — then build a clear path to achievement. No child is treated as average.',
+    text: 'We identify each student’s strengths, learning gaps and individual learning needs from day one, creating a clear and structured path for academic growth. Every student receives focused attention and purposeful support.',
   },
   {
     num: '02',
     title: 'Personalised Learning System',
-    text: 'Every student gets a learning plan tailored to their pace, board and subject needs. One size never fits all — and we never pretend it does.',
+    text: "Learning plans are tailored to each student’s pace, academic level, board and subject requirements. Our approach adapts to the learner rather than relying on a one-size-fits-all method.",
   },
   {
     num: '03',
     title: 'Small Batch — 12:1 Ratio',
-    text: 'A strict 12-student maximum per batch means every child gets direct attention from the teacher every single session. No hiding, no falling behind.',
+    text: 'With a maximum of 12 students per batch, every learner receives individual attention, regular questioning and timely correction. Every student is actively engaged throughout the session.',
   },
   {
     num: '04',
     title: 'Result-Oriented Teaching',
-    text: 'Chapter-wise tests, revision cycles, previous-year papers and mock boards — everything we do is structured to translate understanding into marks.',
+    text: "Concept learning is reinforced through chapter tests, revision cycles, previous-year papers and mock examinations. Every stage is designed to strengthen understanding and improve academic performance.",
   },
   {
     num: '05',
     title: 'Communication Skill Development',
-    text: 'We build confident speakers and clear writers alongside academics — because a child who can express themselves will always have an advantage.',
+    text: "Students are encouraged to understand, articulate and write in their own words rather than rely on memorisation. We build the confidence and clarity needed to communicate knowledge effectively.",
   },
   {
     num: '06',
     title: 'Honest Progress Reports',
-    text: 'Regular updates, real feedback and no sugar-coating. Parents who know exactly where their child stands can actually help them grow.',
+    text: "Regular progress updates provide clear, constructive and transparent feedback. Parents gain an accurate understanding of their child’s performance, strengths and areas requiring improvement.",
   },
 ]
 
@@ -46,15 +46,21 @@ export default function Founder() {
           <div className="about__story">
             <h2 className="about__big-title">About Bhadri's Academy</h2>
             <p className="about__para">
-              Bhadri's Academy started in Bengaluru with a single classroom and a clear purpose: give every child the kind of focused, personal attention that large coaching centres simply cannot.
-            </p>
-            <p className="about__para">
-              Five years and two branches later, that purpose hasn't changed. From Pre-Nursery to Class 10 — State Board, CBSE, ICSE, IB and IGCSE — we sit beside every child, understand where they're struggling, and work with them until they're not.
-            </p>
-            <p className="about__para">
-              The families who trust us do so because they see real progress — not just in marks, but in confidence, in discipline, and in the way their child talks about studying.
+              Bhadri's Academy began in Bengaluru with one classroom. Our purpose is twofold, and we state it plainly.
 
             </p>
+            <p className="about__para">
+              Every child improves, every day.Whatever a child's starting point — struggling, average or ahead — there must be visible improvement each day, in every aspect that matters: understanding, confidence, discipline and expression.
+            </p>
+            <p className="about__para">
+              We raise our standard every year. Year on year, we strengthen how we teach, until Bhadri's Academy is recognised not only in Bengaluru but globally.
+
+            </p>
+
+            <p>Five years and two branches later, both hold. Pre-Nursery to Class 10 — State Board, CBSE, ICSE, IB, IGCSE. We find where a child's understanding breaks, and stay until it holds.</p>
+
+            
+            
             <div className="about__tag-row">
               <span className="about__tag">Bengaluru</span>
               <span className="about__tag">2 Branches</span>

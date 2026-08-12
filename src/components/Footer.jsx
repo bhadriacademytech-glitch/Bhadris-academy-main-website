@@ -60,7 +60,7 @@ export default function Footer() {
           <div className="footer__brand">
             <img src="/logo.jpeg" alt="Bhadri's Academy" className="footer__logo-img" />
             <p className="footer__brand-name">Bhadri's Academy</p>
-            <p className="footer__brand-tag">Right Method · Right Results</p>
+            <p className="footer__brand-tag">Right Method + Right Results</p>
             <p className="footer__brand-city">Bengaluru</p>
             <div className="footer__socials">
               <a href="https://www.instagram.com/bhadris_academy/" target="_blank" rel="noreferrer" aria-label="Instagram" className="footer__social-icon"><IgIcon /></a>

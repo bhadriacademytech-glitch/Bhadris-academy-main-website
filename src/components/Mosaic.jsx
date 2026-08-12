@@ -3,11 +3,11 @@ import useReveal from './useReveal.js'
 const TILES = [
   { type: 'navy', num: '2', label: 'Branches across Bengaluru' },
   { type: 'white', num: '5+', label: 'Years serving students and families' },
-  { type: 'blue', num: '2400', small: 'sqft', label: 'Of clean, well-equipped learning space' },
+  { type: 'blue', num: '6:1', small: 'ratio', label: 'The 6:1 Programme is desgined For Students Who Require Closer Academic Support.' },
   { type: 'gold', num: '5', label: 'Boards supported   —State · CBSE · ICSE · IB · IGCSE' },
   {
     type: 'photo',
-    img: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=700&q=70',
+    img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786525400/IMG_2741_ad5xnu.jpg',
     label: 'Qualified, Caring Faculty',
   },
   { type: 'white', num: '1:12', label: 'Teacher-to-student ratio in every batch' },
@@ -42,7 +42,7 @@ export default function Mosaic() {
 
           <div className="mosaic__photo reveal">
             <img
-              src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=70"
+              src="https://res.cloudinary.com/pcgf67hy/image/upload/v1786525400/IMG_2741_ad5xnu.jpg"
               alt="Students learning at Bhadri's Academy"
               loading="lazy"
             />

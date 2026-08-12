@@ -90,7 +90,7 @@ export default function ApplicationModal() {
             <img src="/logo.jpeg" alt="Bhadri's Academy" className="af__brand-logo" />
             <div>
               <p className="af__brand-name">Bhadri's Academy</p>
-              <p className="af__brand-tag">Right Method · Right Results · Bengaluru</p>
+              <p className="af__brand-tag">Right Method + Right Results · Bengaluru</p>
             </div>
           </div>
           <div className="af__header-right">
@@ -216,7 +216,11 @@ export default function ApplicationModal() {
 
                 <div className="af__row-2">
                   <div className="af__field">
-                    <label className="af__label">Current School</label>
+                    
+                    <label className="af__label">
+                      Current School <span className="af__req">*</span>
+                      {err('Current School') && <span className="af__errmsg">Required</span>}
+                    </label>
                     <input
                       className="af__input"
                       type="text"
@@ -351,12 +355,16 @@ export default function ApplicationModal() {
 
                 <div className="af__row-2">
                   <div className="af__field">
-                    <label className="af__label">Preferred Branch</label>
+                    <label className="af__label">
+                      Preferred Branch <span className="af__req">*</span>
+                      {err('Preferred Branc') && <span className="af__errmsg">Required</span>}
+                    </label>
+                    
                     <div className="af__select-wrap">
                       <select className="af__input af__select" value={f.branch} onChange={set('branch')}>
                         <option value="">Select branch</option>
-                        <option>Branch 1 — Bengaluru</option>
-                        <option>Branch 2 — Bengaluru</option>
+                        <option>Building Strong Foundations</option>
+                        <option>Branch 2 - Siddedahalli</option>
                       </select>
                     </div>
                   </div>

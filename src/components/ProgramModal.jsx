@@ -25,7 +25,7 @@ export default function ProgramModal({ index }) {
         <div className="pmodal__body">
           <p className="pmodal__text">{p.text}</p>
 
-          <p className="pmodal__h">Subjects Covered</p>
+          <p className="pmodal__h">KEY LEARNING AREAS</p>
           <ul className="pmodal__chips">
             {p.subjects.map((s) => <li key={s}>{s}</li>)}
           </ul>

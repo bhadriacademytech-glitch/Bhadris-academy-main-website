@@ -8,15 +8,18 @@ export default function Admissions() {
 
   return (
     <section className="admissions" id="admissions">
-      <div className="container admissions__grid">
-        <div className="reveal">
-          <h2 className="admissions__title">Admissions</h2>
-          <p className="admissions__text">
-            Bhadri's Academy welcomes students from Pre-Nursery to Class 10
-            throughout the academic year. Start with a visit or a free demo
-            class — then enrol with confidence.
-          </p>
-        </div>
+  <div className="container admissions__grid">
+    <div className="reveal">
+      <h2 className="admissions__title">Admissions</h2>
+      <p className="admissions__subtitle">Academic Year 2026–27</p>
+      <p className="admissions__text">
+        Bhadri's Academy welcomes students from Pre-Nursery to Class 10
+        with structured academic programmes designed around each stage
+        of learning. Our admissions process is designed to understand
+        the student's academic needs, identify the appropriate
+        programme and ensure a strong start to their learning journey.
+      </p>
+    </div>
 
         <div className="admissions__cards">
           <button className="adcard reveal" onClick={openApply}>

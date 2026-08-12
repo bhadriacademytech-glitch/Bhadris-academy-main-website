@@ -16,10 +16,10 @@ export default function Gallery() {
           {GALLERY.map((g, i) => (
             <div
               key={i}
-              className={`gitem ${g.cls} reveal`}
+              className={`gitem ${g.cls || ''} reveal`}
               style={{ backgroundImage: `url(${g.img})` }}
             >
-              <span>{g.label}</span>
+              {g.label && <span>{g.label}</span>}
             </div>
           ))}
         </div>

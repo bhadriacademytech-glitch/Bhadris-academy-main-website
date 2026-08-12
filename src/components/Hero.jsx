@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import { useModal } from '../ModalContext.jsx'
 
 const HERO_VIDEO =
-  'https://res.cloudinary.com/pcgf67hy/video/upload/v1785495037/BA_Website_VT_lru16g.mov'
+  'https://res.cloudinary.com/pcgf67hy/video/upload/v1786524701/BA_Website_VT_New_hxuher.mov'
 
 export default function Hero() {
   const { openApply, setEnquiryOpen } = useModal()
@@ -56,11 +56,10 @@ export default function Hero() {
 
       <div className="container hero__content">
         <h1 className="hero__title">
-          Strong Foundations <em>for</em> Bright Futures
+          Building Strong Foundations <em>for</em> Bright Futures
         </h1>
         <p className="hero__sub">
-          Personalised academic tutoring from Pre-Nursery to 10th Standard
-          — small batches, caring teachers and steady results.
+          Personalised academic support for students from Pre-Nursery to Grade 10, designed to strengthen concepts, improve confidence and deliver consistent academic progress.
         </p>
         <div className="hero__actions">
           <button className="btn btn--solid" onClick={openApply}>
