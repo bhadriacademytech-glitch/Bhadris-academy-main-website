@@ -58,7 +58,7 @@ export default function Footer() {
         <div className="footer__grid">
 
           <div className="footer__brand">
-            <img src="/logo.jpeg" alt="Bhadri's Academy" className="footer__logo-img" />
+            <img src="/logo.jpeg" alt="Bhadri's Academy" className="footer__logo-img" width="88" height="100" />
             <p className="footer__brand-name">Bhadri's Academy</p>
             <p className="footer__brand-tag">Right Method + Right Results</p>
             <p className="footer__brand-city">Bengaluru</p>

@@ -90,7 +90,7 @@ export default function ApplicationModal() {
       <div className="af__header">
         <div className="af__header-inner container">
           <div className="af__brand">
-            <img src="/logo.jpeg" alt="Bhadri's Academy" className="af__brand-logo" />
+            <img src="/logo.jpeg" alt="Bhadri's Academy" className="af__brand-logo" width="50" height="50" />
             <div>
               <p className="af__brand-name">Bhadri's Academy</p>
               <p className="af__brand-tag">Right Method + Right Results · Bengaluru</p>

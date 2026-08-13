@@ -52,7 +52,7 @@ export default function Header() {
 
             <a href="#home" className="header__logo" aria-label={SITE.name}>
               {LOGO_SRC
-                ? <img src={LOGO_SRC} alt={SITE.name} className="header__logo-img" />
+                ? <img src={LOGO_SRC} alt={SITE.name} className="header__logo-img" width="120" height="140" />
                 : (
                   <>
                     <div className="header__crest"><span>B</span></div>

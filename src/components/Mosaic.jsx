@@ -49,6 +49,8 @@ export default function Mosaic() {
               src={opt(PHOTO_URL, 900)}
               alt="Students learning at Bhadri's Academy"
               loading="lazy"
+              width="900"
+              height="765"
             />
           </div>
         </div>
