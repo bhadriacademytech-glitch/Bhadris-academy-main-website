@@ -17,7 +17,7 @@ export const PROGRAMS = [
       'Regular practice and reinforcement',
       'Parent progress updates',
     ],
-    img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=70',
+    img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786601865/IMG_3034_ky9wxt.jpg',
     color: '#c6a75e',
   },
   {
@@ -34,7 +34,7 @@ export const PROGRAMS = [
       'Individual attention to learning gaps',
       'Progress monitoring and parent updates',
     ],
-    img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=70',
+    img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786603269/Gemini_Generated_Image_neoptjneoptjneop_qyofi9.png',
     color: '#2e6fb7',
   },
   {
@@ -52,13 +52,13 @@ export const PROGRAMS = [
       'Individual progress monitoring',
       'Regular parent updates',
     ],
-    img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=70',
+    img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786603580/Gemini_Generated_Image_es4nlxes4nlxes4n_mkatc9.png',
     color: '#1a3a6b',
   },
   {
     grades: 'Class 9 – Class 10',
-    title: 'Board Prepration',
-    label: 'Board Prep (9 – 10)',
+    title: 'Board preparationration',
+    label: 'Board preparation (9 – 10)',
     short: "Developing examination readiness through complete syllabus coverage, conceptual mastery, application-based practice, answer-writing, structured revision and continuous assessment—enabling students to identify gaps, improve performance and approach board examinations with confidence.",
     text: "A structured board-preparation programme focused on conceptual mastery, application, answer-writing and examination readiness, with continuous assessment and targeted academic improvement.",
    subjects: ['English', 'Mathematics', 'EVS / Science','Social Studies', 'Kannada', ' Hindi'],
@@ -73,7 +73,7 @@ export const PROGRAMS = [
       'Regular academic progress updates to parents',
       
     ],
-    img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1600&q=70',
+    img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786604027/Gemini_Generated_Image_kjd082kjd082kjd0_cavukr.png',
     color: '#14264b',
   },
 ]

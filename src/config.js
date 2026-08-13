@@ -34,13 +34,13 @@ export const PARENT_REELS = [
 
 
 export const GALLERY = [
-  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1785495396/IMG_2252_mkoqfx.jpg', label: 'Classroom Sessions', cls: 'gitem--w' },
-  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1785495384/IMG_2251_tlhmy2.jpg', label: 'Young Learners', cls: 'gitem--t' },
-  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1785495383/IMG_2326_zhsmgn.jpg', label: 'Board Prep', cls: '' },
-  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1785495384/IMG_2327_okwxl6.jpg', label: 'Group Study', cls: '' },
-  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786525400/IMG_2741_ad5xnu.jpg', label: 'Our Faculty', cls: '' },
-  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786525004/IMG_2328_f9azv1.jpg', label: 'Study Material', cls: '' },
-  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786525009/IMG_2719_e3ftgh.jpg', label: 'Achievers', cls: 'gitem--w' },
+  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786525008/IMG_2734_wjrxsd.jpg', label: '', cls: 'gitem--w' },
+  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1785495384/IMG_2251_tlhmy2.jpg', label: '', cls: 'gitem--t' },
+  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1785495383/IMG_2326_zhsmgn.jpg', label: '', cls: '' },
+  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1785495384/IMG_2327_okwxl6.jpg', label: '', cls: '' },
+  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786525400/IMG_2741_ad5xnu.jpg', label: '', cls: '' },
+  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786525004/IMG_2328_f9azv1.jpg', label: '', cls: '' },
+  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786525009/IMG_2719_e3ftgh.jpg', label: '', cls: 'gitem--w' },
 ]
 
 export const waLink = (text) =>

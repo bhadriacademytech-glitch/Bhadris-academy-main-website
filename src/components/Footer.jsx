@@ -94,7 +94,7 @@ export default function Footer() {
               <li><a href="#learning">Early Years (Pre-Nursery – 1)</a></li>
               <li><a href="#learning">Primary School (1 – 5)</a></li>
               <li><a href="#learning">Middle School (5 – 8)</a></li>
-              <li><a href="#learning">Board Prep (9 – 10)</a></li>
+              <li><a href="#learning">Board preparation (9 – 10)</a></li>
               <li><a href="#experience">Experience the Academy</a></li>
               <li><a href="#gallery">Gallery</a></li>
             </ul>

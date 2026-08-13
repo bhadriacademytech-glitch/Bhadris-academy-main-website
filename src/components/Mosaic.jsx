@@ -10,7 +10,7 @@ const TILES = [
     img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786525400/IMG_2741_ad5xnu.jpg',
     label: 'Qualified, Caring Faculty',
   },
-  { type: 'white', num: '1:12', label: 'Teacher-to-student ratio in every batch' },
+  { type: 'white', num: '12:1', label: 'Teacher-to-student ratio in every batch' },
 ]
 
 export default function Mosaic() {

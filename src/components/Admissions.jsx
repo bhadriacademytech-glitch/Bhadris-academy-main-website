@@ -25,7 +25,7 @@ export default function Admissions() {
           <button className="adcard reveal" onClick={openApply}>
             <div
               className="adcard__img"
-              style={{ backgroundImage: "url('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1000&q=70')" }}
+              style={{ backgroundImage: "url('https://res.cloudinary.com/pcgf67hy/image/upload/v1786601859/ChatGPT_Image_Aug_12_2026_at_07_49_46_PM_fuzbvf.png')" }}
             />
             <span className="adcard__bar adcard__bar--gold">
               Enrol Now
@@ -36,7 +36,7 @@ export default function Admissions() {
           <button className="adcard reveal" onClick={openVisit}>
             <div
               className="adcard__img"
-              style={{ backgroundImage: "url('https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1000&q=70')" }}
+              style={{ backgroundImage: "url('https://res.cloudinary.com/pcgf67hy/image/upload/v1786603949/visti_rbdx74.jpg')" }}
             />
             <span className="adcard__bar adcard__bar--blue">
               Request a Visit

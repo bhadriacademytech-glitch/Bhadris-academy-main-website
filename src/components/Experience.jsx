@@ -2,18 +2,17 @@ import { useEffect, useRef, useState } from 'react'
 
 const ITEMS = [
   {
-    label: 'Beyond Learning',
+    label: 'STUDENT DEVELOPMENT',
     
     img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1785495383/IMG_2326_zhsmgn.jpg',
   },
   {
-    label: 'Our Facilities',
+    label: 'LEARNING ENVIRONMENT',
     
     img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786525009/IMG_2719_e3ftgh.jpg',
   },
   {
-    label: 'Our Faculty',
-    // caption: "Every teacher here is chosen for patience as much as subject mastery. A strict 1:12 ratio means they know each child's gaps by name, not by roll number.",
+    label: 'TEACHING EXCELLENCE',
     img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786525228/IMG_2718_b5mhpf.jpg',
   },
 ]
