@@ -5,7 +5,7 @@ const HERO_VIDEO =
   'https://res.cloudinary.com/pcgf67hy/video/upload/f_mp4,q_auto/v1786524701/BA_Website_VT_New_hxuher.mov'
 
 const HERO_POSTER_DESKTOP =
-  'https://res.cloudinary.com/pcgf67hy/image/upload/v1786616566/hero-poster-desktop_g2xxrs.jpg'
+  ''
 
 export default function Hero() {
   const { openApply, setEnquiryOpen } = useModal()
