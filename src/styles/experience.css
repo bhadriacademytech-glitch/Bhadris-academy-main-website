@@ -33,7 +33,8 @@
   margin: 18px 0 40px;
   max-width: 400px;
   font-size: 15px;
-  color: var(--ink-soft);
+  color: var(--ink);
+  font-weight: 500;
 }
 
 .experience__list { display: grid; }
@@ -70,12 +71,5 @@
 }
 
 @media (max-width: 880px) {
-  .experience__viewport {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-    min-height: 0;
-  }
-  .experience__left { padding-top: 48px; }
-  .experience__lede { margin-bottom: 22px; }
-  .experience__right { min-height: 300px; }
+  .experience { display: none; }
 }

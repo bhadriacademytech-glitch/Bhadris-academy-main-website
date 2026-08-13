@@ -79,7 +79,7 @@ export default function Header() {
       </header>
 
       {open && (
-        <div className="drawer open">
+        <div className="drawer open" role="dialog" aria-modal="true" aria-label="Site menu">
           <button className="drawer__close" onClick={close}>✕</button>
           {[...LEFT, ...RIGHT].map((l) => (
             <a key={l.href} href={l.href} onClick={close}>{l.label}</a>

@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
 
+const opt = (url, w) => url.replace('/upload/', `/upload/f_auto,q_auto,w_${w}/`)
+
 const ITEMS = [
   {
     label: 'STUDENT DEVELOPMENT',
-    
     img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1785495383/IMG_2326_zhsmgn.jpg',
   },
   {
     label: 'LEARNING ENVIRONMENT',
-    
     img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786525009/IMG_2719_e3ftgh.jpg',
   },
   {
@@ -70,7 +70,7 @@ export default function Experience() {
               <div
                 key={it.label}
                 className={`experience__img ${i === active ? 'active' : ''}`}
-                style={{ backgroundImage: `url(${it.img})` }}
+                style={{ backgroundImage: `url(${opt(it.img, 1400)})` }}
               />
             ))}
             <p className="experience__caption">{ITEMS[active].caption}</p>

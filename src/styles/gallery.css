@@ -15,6 +15,8 @@
 .gallery .sec-lede {
   margin-top: 0;
   margin-bottom: 30px;
+  color: var(--ink);
+  font-weight: 500;
 }
 
 .gallery__grid {

@@ -2,30 +2,32 @@ import { SITE, waLink } from '../config.js'
 import { useModal } from '../ModalContext.jsx'
 import useReveal from './useReveal.js'
 
+const opt = (url, w) => url.replace('/upload/', `/upload/f_auto,q_auto,w_${w}/`)
+
 export default function Admissions() {
   useReveal()
   const { openApply, openVisit, setEnquiryOpen } = useModal()
 
   return (
     <section className="admissions" id="admissions">
-  <div className="container admissions__grid">
-    <div className="reveal">
-      <h2 className="admissions__title">Admissions</h2>
-      <p className="admissions__subtitle">Academic Year 2026–27</p>
-      <p className="admissions__text">
-        Bhadri's Academy welcomes students from Pre-Nursery to Class 10
-        with structured academic programmes designed around each stage
-        of learning. Our admissions process is designed to understand
-        the student's academic needs, identify the appropriate
-        programme and ensure a strong start to their learning journey.
-      </p>
-    </div>
+      <div className="container admissions__grid">
+        <div className="reveal">
+          <h2 className="admissions__title">Admissions</h2>
+          <p className="admissions__subtitle">Academic Year 2026–27</p>
+          <p className="admissions__text">
+            Bhadri's Academy welcomes students from Pre-Nursery to Class 10
+            with structured academic programmes designed around each stage
+            of learning. Our admissions process is designed to understand
+            the student's academic needs, identify the appropriate
+            programme and ensure a strong start to their learning journey.
+          </p>
+        </div>
 
         <div className="admissions__cards">
           <button className="adcard reveal" onClick={openApply}>
             <div
               className="adcard__img"
-              style={{ backgroundImage: "url('https://res.cloudinary.com/pcgf67hy/image/upload/v1786601859/ChatGPT_Image_Aug_12_2026_at_07_49_46_PM_fuzbvf.png')" }}
+              style={{ backgroundImage: `url('${opt('https://res.cloudinary.com/pcgf67hy/image/upload/v1786601859/ChatGPT_Image_Aug_12_2026_at_07_49_46_PM_fuzbvf.png', 800)}')` }}
             />
             <span className="adcard__bar adcard__bar--gold">
               Enrol Now
@@ -36,7 +38,7 @@ export default function Admissions() {
           <button className="adcard reveal" onClick={openVisit}>
             <div
               className="adcard__img"
-              style={{ backgroundImage: "url('https://res.cloudinary.com/pcgf67hy/image/upload/v1786603949/visti_rbdx74.jpg')" }}
+              style={{ backgroundImage: `url('${opt('https://res.cloudinary.com/pcgf67hy/image/upload/v1786603949/visti_rbdx74.jpg', 800)}')` }}
             />
             <span className="adcard__bar adcard__bar--blue">
               Request a Visit

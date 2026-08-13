@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { useModal } from '../ModalContext.jsx'
 import useReveal from './useReveal.js'
 
+const opt = (url, w) => url.replace('/upload/', `/upload/f_auto,q_auto,w_${w}/`)
+
 export const PROGRAMS = [
   {
     grades: 'Pre-Nursery – Class 1',
@@ -30,7 +32,6 @@ export const PROGRAMS = [
     points: [
       'Concept-based teaching and guided practice',
       'Daily homework and revision support',
-      'Daily homework and revision support',
       'Individual attention to learning gaps',
       'Progress monitoring and parent updates',
     ],
@@ -57,11 +58,11 @@ export const PROGRAMS = [
   },
   {
     grades: 'Class 9 – Class 10',
-    title: 'Board preparationration',
+    title: 'Board preparation',
     label: 'Board preparation (9 – 10)',
     short: "Developing examination readiness through complete syllabus coverage, conceptual mastery, application-based practice, answer-writing, structured revision and continuous assessment—enabling students to identify gaps, improve performance and approach board examinations with confidence.",
     text: "A structured board-preparation programme focused on conceptual mastery, application, answer-writing and examination readiness, with continuous assessment and targeted academic improvement.",
-   subjects: ['English', 'Mathematics', 'EVS / Science','Social Studies', 'Kannada', ' Hindi'],
+    subjects: ['English', 'Mathematics', 'EVS / Science','Social Studies', 'Kannada', ' Hindi'],
     points: [
       'Complete and structured syllabus coverage',
       'Conceptual and application-based learning',
@@ -71,7 +72,6 @@ export const PROGRAMS = [
       'Targeted revision and doubt resolution',
       'Individual progress tracking',
       'Regular academic progress updates to parents',
-      
     ],
     img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786604027/Gemini_Generated_Image_kjd082kjd082kjd0_cavukr.png',
     color: '#14264b',
@@ -82,16 +82,26 @@ export default function Learning() {
   useReveal()
   const { openProgram } = useModal()
   const [featured, setFeatured] = useState(0)
+  const [loaded, setLoaded] = useState(() => new Set([0]))
   const f = PROGRAMS[featured]
+
+  const select = (i) => {
+    setFeatured(i)
+    setLoaded((prev) => (prev.has(i) ? prev : new Set(prev).add(i)))
+  }
+
+  const others = PROGRAMS
+    .map((p, i) => ({ ...p, i }))
+    .filter((p) => p.i !== featured)
 
   return (
     <section className="learning" id="learning">
       <div className="container">
         <h2 className="sec-title reveal">Learning</h2>
-       <p className="sec-lede reveal">
-  Learning That Builds Understanding, Confidence, and Progress.
-  Every learner is different, Our teaching adapts to where they are today — and prepares them for what comes next.
-</p>
+        <p className="sec-lede reveal">
+          Learning That Builds Understanding, Confidence, and Progress.
+          Every learner is different, Our teaching adapts to where they are today — and prepares them for what comes next.
+        </p>
 
         <div className="learning__feature reveal">
 
@@ -100,39 +110,42 @@ export default function Learning() {
               key={p.title}
               className="learning__feature-img"
               style={{
-                backgroundImage: 'url(' + p.img + ')',
+                backgroundImage: loaded.has(i) ? 'url(' + opt(p.img, 1200) + ')' : 'none',
                 opacity: i === featured ? 1 : 0,
               }}
             />
           ))}
 
-          <div className="learning__feature-body">
-            <p className="learning__feature-grades">{f.grades}</p>
-            <h3 className="learning__feature-title">{f.title}</h3>
-            <p className="learning__feature-text">{f.short}</p>
-            <button
-              className="sq-arrow"
-              aria-label={'Learn more about ' + f.title}
-              onClick={() => openProgram(featured)}
-            >
-              →
-            </button>
-          </div>
-
-          <div className="learning__thumbs">
-            {PROGRAMS.map((p, i) => (
+          <div className="learning__feature-row">
+            <div className="learning__feature-body">
+              <p className="learning__feature-grades">{f.grades}</p>
+              <h3 className="learning__feature-title">{f.title}</h3>
+              <p className="learning__feature-text">{f.short}</p>
               <button
-                key={p.title}
-                className={'lthumb ' + (i === featured ? 'active' : '')}
-                onClick={() => i === featured ? openProgram(i) : setFeatured(i)}
+                className="sq-arrow"
+                aria-label={'Learn more about ' + f.title}
+                onClick={() => openProgram(featured)}
               >
-                <div className="lthumb__img" style={{ backgroundImage: 'url(' + p.img + ')' }} />
-                <div className="lthumb__label">
-                  <span className="lthumb__label-text">{p.label}</span>
-                  <span className="lthumb__arrow">→</span>
-                </div>
+                →
               </button>
-            ))}
+            </div>
+
+            <div className="learning__thumbs">
+              {others.map(({ i, title, label, img }) => (
+                <button
+                  key={title}
+                  className="lthumb"
+                  onClick={() => select(i)}
+                  aria-label={'Switch to ' + label}
+                >
+                  <div className="lthumb__img" style={{ backgroundImage: 'url(' + opt(img, 300) + ')' }} />
+                  <div className="lthumb__label">
+                    <span className="lthumb__label-text">{label}</span>
+                    <span className="lthumb__arrow">→</span>
+                  </div>
+                </button>
+              ))}
+            </div>
           </div>
 
         </div>

@@ -32,10 +32,10 @@
 .header__nav a,
 .header__nav button {
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--navy);
+  color: var(--ink);
   padding: 4px 0;
   position: relative;
   white-space: nowrap;
@@ -43,6 +43,7 @@
   border: none;
   cursor: pointer;
   font-family: inherit;
+  transition: color 0.15s ease;
 }
 .header__nav a::after,
 .header__nav button::after {
@@ -55,7 +56,11 @@
 }
 .header__nav a:hover::after,
 .header__nav button:hover::after { width: 100%; }
-.header__nav .nav-accent { color: var(--gold); font-weight: 600; }
+
+.header__nav a:active,
+.header__nav button:active { color: var(--gold); }
+
+.header__nav .nav-accent { color: var(--ink); font-weight: 700; }
 
 /* ── Hanging logo panel (desktop) ── */
 .header__logo {
@@ -175,6 +180,7 @@
 }
 .drawer a:hover,
 .drawer button:hover { color: var(--gold-soft); }
+
 /* ── Mobile overrides ── */
 @media (max-width: 1020px) {
   body { padding-bottom: var(--mobile-nav-h); }
@@ -185,7 +191,6 @@
   }
   .header__nav { display: none; }
 
-  /* Keep hanging logo panel on mobile — smaller, navy box */
   .header__logo {
     position: absolute;
     top: 0;
@@ -206,5 +211,5 @@
     object-fit: contain;
   }
 
-  .header__burger { display: none; } /* bottom nav opens drawer instead */
+  .header__burger { display: none; }
 }

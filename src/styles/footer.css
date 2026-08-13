@@ -51,7 +51,7 @@
   font-size: 11px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--ink-soft);
+  color: var(--ink);
   margin-bottom: 6px;
 }
 
@@ -99,7 +99,8 @@
   font-size: 14.5px;
   line-height: 1.9;
   font-style: normal;
-  color: var(--ink-soft);
+  color: var(--ink);
+  font-weight: 500;
 }
 
 .footer__contacts {
@@ -135,9 +136,9 @@
 .footer__links a,
 .footer__links button {
   font-size: 14px;
-  color: var(--ink-soft);
+  color: var(--ink);
   text-align: left;
-  font-weight: 300;
+  font-weight: 400;
   font-family: inherit;
   background: none;
   border: none;
@@ -163,7 +164,6 @@
 .footer__links a:hover,
 .footer__links button:hover { color: var(--navy); }
 
-/* ── Bold Ariar Strip ── */
 /* ── Ariar Credit ── */
 .footer__ariar {
   border-top: 1px solid var(--line);
@@ -174,7 +174,7 @@
 .footer__ariar-text {
   font-size: 15px;
   font-weight: 400;
-  color: var(--ink-soft);
+  color: var(--ink);
   letter-spacing: 0.04em;
 }
 
@@ -198,8 +198,9 @@
 
 .footer__copy {
   font-size: 12.5px;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.55);
 }
+
 /* ── Responsive ── */
 @media (max-width: 960px) {
   .footer__grid { grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 44px); }

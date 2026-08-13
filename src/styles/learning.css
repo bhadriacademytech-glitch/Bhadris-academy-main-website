@@ -1,10 +1,16 @@
 /* ============================================================
-   LEARNING — 100% responsive
+   LEARNING — inline thumbnails on feature image, 100% responsive
    ============================================================ */
 
 .learning {
   background: var(--white);
-  padding: clamp(60px, 8vw, 100px) 0 0;  /* ← remove bottom padding, thumbs handle it */
+  padding: clamp(60px, 8vw, 100px) 0;
+  margin-bottom: clamp(30px, 4vw, 50px);
+}
+
+#learning .sec-lede {
+  color: var(--ink);
+  font-weight: 500;
 }
 
 /* ── Feature card ── */
@@ -32,21 +38,28 @@
   z-index: -1;
   background: linear-gradient(
     to bottom,
-    rgba(10, 20, 40, 0.45) 0%,
-    rgba(10, 20, 40, 0.65) 50%,
-    rgba(10, 20, 40, 0.90) 100%
+    rgba(10, 20, 40, 0.4) 0%,
+    rgba(10, 20, 40, 0.55) 45%,
+    rgba(10, 20, 40, 0.88) 100%
   );
 }
 
-/* ── Feature body ── */
-.learning__feature-body {
-  padding: clamp(28px, 5vw, 64px) clamp(20px, 4vw, 56px);
-  max-width: 560px;
-  min-height: clamp(340px, 40vw, 480px);
+/* ── Row: body left, thumbs right, both bottom-aligned inside the image ── */
+.learning__feature-row {
+  position: relative;
+  z-index: 3;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding-bottom: clamp(200px, 22vw, 240px); /* ← space for absolute thumbs */
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: clamp(24px, 3vw, 40px);
+  padding: clamp(28px, 5vw, 64px) clamp(20px, 4vw, 56px);
+  min-height: clamp(380px, 42vw, 520px);
+}
+
+.learning__feature-body {
+  flex: 1 1 320px;
+  max-width: 480px;
 }
 
 .learning__feature-grades {
@@ -96,20 +109,16 @@
   border-color: var(--gold);
 }
 
-/* ── Thumbnails — 4 across, pinned to bottom ── */
+/* ── Inline thumbnails — the other programs, sitting on the image ── */
 .learning__thumbs {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
   display: flex;
-  flex-direction: row;
-  z-index: 3;
+  gap: 14px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
 }
 
 .lthumb {
-  flex: 1;
-  min-width: 0;
+  width: 130px;
   display: flex;
   flex-direction: column;
   background: none;
@@ -120,55 +129,42 @@
 }
 
 .lthumb__img {
-  height: 120px;
+  height: 100px;
+  width: 100%;
   background-size: cover;
   background-position: center;
   transition: transform 0.4s ease;
-  border-bottom: 3px solid transparent;
+  border-bottom: 3px solid var(--gold);
   overflow: hidden;
 }
-.lthumb:hover .lthumb__img  { transform: scale(1.04); }
-.lthumb.active .lthumb__img { border-bottom-color: var(--gold-bright); }
+.lthumb:hover .lthumb__img { transform: scale(1.05); }
 
-/* ── Label bar — KEY FIX ── */
 .lthumb__label {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 6px;
-  padding: 12px 10px;
-  background: #0a1829;
+  padding: 10px 10px 12px;
+  background: rgba(14, 28, 58, 0.8);
   border-left: 3px solid var(--gold);
-  min-height: 64px;
   transition: background 0.3s ease;
 }
-.lthumb:hover .lthumb__label  { background: #122040; }
-.lthumb.active .lthumb__label {
-  background: var(--navy);
-  border-left-color: var(--gold-bright);
-}
+.lthumb:hover .lthumb__label { background: var(--navy); }
 
-/* ── Label text — fixed to never overflow ── */
 .lthumb__label-text {
   font-family: var(--font-sans);
-  font-size: 10px;           /* ← smaller so all 4 labels fit */
+  font-size: 10px;
   font-weight: 800;
-  letter-spacing: 0.06em;   /* ← reduced so text doesn't expand too wide */
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #ffffff;
-  display: block;
-  line-height: 1.4;
+  line-height: 1.35;
   word-break: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
-  flex: 1;
-  min-width: 0;
 }
 
 .lthumb__arrow {
-  color: var(--gold);
+  align-self: flex-end;
+  color: var(--gold-soft);
   font-size: 13px;
-  flex-shrink: 0;
   transition: transform 0.3s ease;
 }
 .lthumb:hover .lthumb__arrow { transform: translateX(3px); }
@@ -177,69 +173,61 @@
    RESPONSIVE
    ============================================================ */
 
-/* ── Tablet ── */
 @media (max-width: 900px) {
-  .learning__feature-body {
-    min-height: clamp(260px, 38vw, 380px);
-    padding-bottom: clamp(190px, 24vw, 220px);
-  }
-
-  .lthumb__img        { height: 100px; }
-  .lthumb__label      { min-height: 58px; padding: 10px 8px; }
-  .lthumb__label-text { font-size: 9px; letter-spacing: 0.04em; }
-  .lthumb__arrow      { font-size: 11px; }
+  .learning__feature-row { min-height: clamp(340px, 40vw, 420px); }
+  .lthumb { width: 110px; }
+  .lthumb__img { height: 84px; }
+  .lthumb__label-text { font-size: 9px; }
 }
 
-/* ── Mobile — stack vertically ── */
 @media (max-width: 600px) {
+  .learning__feature-row {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 0;
+    padding: 24px 0 0;
+  }
+
   .learning__feature-body {
-    min-height: 200px;
-    padding: 20px 16px 16px;
-    padding-bottom: 16px;
+    max-width: none;
+    padding: 0 20px 24px;
   }
 
   .learning__thumbs {
-    position: static;
     flex-direction: column;
+    gap: 0;
     width: 100%;
   }
 
   .lthumb {
     width: 100%;
-    flex-direction: row;
+    position: relative;
+    height: 190px;
   }
 
   .lthumb__img {
-    width: 90px;
-    height: 70px;
-    flex-shrink: 0;
-    border-bottom: none;
-    border-right: 3px solid transparent;
-  }
-  .lthumb.active .lthumb__img {
-    border-right-color: var(--gold-bright);
+    position: absolute;
+    inset: 0;
+    height: 100%;
     border-bottom: none;
   }
 
   .lthumb__label {
-    flex: 1;
-    min-height: 70px;
-    border-left: 3px solid var(--gold);
-    padding: 10px 12px;
+    position: absolute;
+    inset: 0;
+    justify-content: flex-end;
+    background: linear-gradient(to top, rgba(14,28,58,0.85) 0%, rgba(14,28,58,0.1) 60%, transparent 100%);
+    border-left: none;
+    padding: 16px;
   }
-  .lthumb.active .lthumb__label { border-left-color: var(--gold-bright); }
 
-  .lthumb__label-text { font-size: 11px; letter-spacing: 0.08em; }
-  .lthumb__arrow      { font-size: 13px; }
+  .lthumb__label-text { font-size: 15px; letter-spacing: 0.08em; }
+  .lthumb__arrow { align-self: flex-start; font-size: 15px; margin-top: 6px; }
 }
 
-/* ── Small mobile ── */
 @media (max-width: 380px) {
   .learning__feature-title { font-size: clamp(20px, 7vw, 28px); }
   .learning__feature-text  { font-size: 13px; }
-  .lthumb__img             { width: 76px; height: 64px; }
-  .lthumb__label           { padding: 8px 10px; min-height: 64px; }
-  .lthumb__label-text      { font-size: 10px; }
 }
 
 /* ============================================================
@@ -289,7 +277,7 @@
 }
 
 .pmodal__body { padding: 24px 24px 32px; }
-.pmodal__text { color: var(--ink-soft); font-size: 15px; }
+.pmodal__text { color: var(--ink); font-weight: 500; font-size: 15px; }
 
 .pmodal__h {
   margin: 20px 0 10px;
@@ -308,7 +296,7 @@
 .pmodal__points { display: grid; gap: 10px; }
 .pmodal__points li {
   display: flex; gap: 10px;
-  font-size: 14px; color: var(--ink-soft);
+  font-size: 14px; color: var(--ink); font-weight: 500;
 }
 .pmodal__points li::before { content: "—"; color: var(--gold); }
 

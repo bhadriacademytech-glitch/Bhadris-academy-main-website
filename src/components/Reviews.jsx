@@ -2,11 +2,11 @@ import { useRef, useState, useEffect } from 'react'
 import { PARENT_REELS } from '../config.js'
 import useReveal from './useReveal.js'
 
-function ReelThumb({ src, poster, tag, onOpen }) {
+function ReelThumb({ src, poster, tag, onOpen, active }) {
   const [thumb, setThumb] = useState(poster || '')
 
   useEffect(() => {
-    if (!src || poster) return
+    if (!src || poster || !active) return
     const v = document.createElement('video')
     v.src = src
     v.crossOrigin = 'anonymous'
@@ -24,10 +24,25 @@ function ReelThumb({ src, poster, tag, onOpen }) {
       v.src = ''
     })
     v.load()
-  }, [src, poster])
+  }, [src, poster, active])
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      onOpen()
+    }
+  }
 
   return (
-    <div className="rv__inner" onClick={onOpen} style={{ cursor: 'pointer' }}>
+    <div
+      className="rv__inner"
+      onClick={onOpen}
+      onKeyDown={handleKeyDown}
+      role="button"
+      tabIndex={0}
+      aria-label={`Play video: ${tag}`}
+      style={{ cursor: 'pointer' }}
+    >
       <div className="rv__bg" />
       {thumb && (
         <div className="rv__poster" style={{ backgroundImage: `url(${thumb})` }} />
@@ -40,8 +55,26 @@ function ReelThumb({ src, poster, tag, onOpen }) {
 
 export default function Reviews() {
   const scrollRef = useRef(null)
+  const sectionRef = useRef(null)
   const [activeIndex, setActiveIndex] = useState(null)
+  const [inView, setInView] = useState(false)
   useReveal()
+
+  useEffect(() => {
+    const el = sectionRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '400px' }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   const scroll = (dir) => {
     const el = scrollRef.current
@@ -62,7 +95,7 @@ export default function Reviews() {
   const active = activeIndex !== null ? PARENT_REELS[activeIndex] : null
 
   return (
-    <section className="reviews" id="reviews">
+    <section className="reviews" id="reviews" ref={sectionRef}>
 
       <div className="container">
         <div className="reviews__head reveal">
@@ -89,6 +122,7 @@ export default function Reviews() {
                 poster={reel.poster}
                 tag={reel.tag}
                 onOpen={() => setActiveIndex(i)}
+                active={inView}
               />
             </div>
           ))}

@@ -12,9 +12,9 @@ const INIT = {
 }
 
 const REQUIRED = {
-  0: ['studentName', 'dob', 'gender', 'applyClass', 'board'],
+  0: ['studentName', 'dob', 'gender', 'applyClass', 'board', 'currentSchool'],
   1: ['parentName', 'relation', 'phone', 'email'],
-  2: [],
+  2: ['branch'],
 }
 
 export default function ApplicationModal() {
@@ -35,8 +35,6 @@ export default function ApplicationModal() {
 
   const err = (k) => errors[k]
 
-  const canNext = () => REQUIRED[step].every((k) => f[k].trim())
-
   const next = () => {
     const e = {}
     REQUIRED[step].forEach((k) => { if (!f[k].trim()) e[k] = true })
@@ -45,6 +43,11 @@ export default function ApplicationModal() {
   }
 
   const submit = () => {
+    const e = {}
+    REQUIRED[step].forEach((k) => { if (!f[k].trim()) e[k] = true })
+    setErrors(e)
+    if (Object.keys(e).length > 0) return
+
     const lines = [
       "🎓 *New Admission — Bhadri's Academy*",
       '━━━━━━━━━━━━━━━━━━━━━━━━',
@@ -215,17 +218,17 @@ export default function ApplicationModal() {
                 </div>
 
                 <div className="af__row-2">
-                  <div className="af__field">
-                    
+                  <div className={'af__field' + (err('currentSchool') ? ' af__field--err' : '')}>
                     <label className="af__label">
                       Current School <span className="af__req">*</span>
-                      {err('Current School') && <span className="af__errmsg">Required</span>}
+                      {err('currentSchool') && <span className="af__errmsg">Required</span>}
                     </label>
                     <input
                       className="af__input"
                       type="text"
                       value={f.currentSchool}
                       onChange={set('currentSchool')}
+                      onBlur={blur('currentSchool')}
                       placeholder="Name of current school"
                     />
                   </div>
@@ -349,19 +352,18 @@ export default function ApplicationModal() {
                   <span className="af__section-num">03</span>
                   <div>
                     <h3>Preferences & Message</h3>
-                    <p>A few final details — all optional</p>
+                    <p>A few final details</p>
                   </div>
                 </div>
 
                 <div className="af__row-2">
-                  <div className="af__field">
+                  <div className={'af__field' + (err('branch') ? ' af__field--err' : '')}>
                     <label className="af__label">
                       Preferred Branch <span className="af__req">*</span>
-                      {err('Preferred Branc') && <span className="af__errmsg">Required</span>}
+                      {err('branch') && <span className="af__errmsg">Required</span>}
                     </label>
-                    
                     <div className="af__select-wrap">
-                      <select className="af__input af__select" value={f.branch} onChange={set('branch')}>
+                      <select className="af__input af__select" value={f.branch} onChange={set('branch')} onBlur={blur('branch')}>
                         <option value="">Select branch</option>
                         <option>Building Strong Foundations</option>
                         <option>Branch 2 - Siddedahalli</option>

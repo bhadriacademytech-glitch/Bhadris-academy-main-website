@@ -19,10 +19,19 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  background:
+  background-image:
     linear-gradient(rgba(14, 28, 58, 0.35), rgba(14, 28, 58, 0.35)),
-    url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1920&q=70")
-    center / cover no-repeat;
+    url("https://res.cloudinary.com/pcgf67hy/image/upload/v1786616566/hero-poster-desktop_g2xxrs.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 640px) {
+  .hero__poster {
+    background-image:
+      linear-gradient(rgba(14, 28, 58, 0.35), rgba(14, 28, 58, 0.35)),
+      url("https://res.cloudinary.com/pcgf67hy/image/upload/v1786616566/hero-poster-mobile_t3hp66.jpg");
+  }
 }
 
 /* ── Video — direct element, fills frame perfectly ── */
@@ -32,6 +41,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 42% 30%;
   z-index: 1;
 
   /* iOS Safari specific fixes */

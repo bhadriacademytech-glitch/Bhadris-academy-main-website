@@ -4,7 +4,7 @@
 
 .founder {
   background: var(--white);
-  padding: clamp(76px, 9vw, 120px) 0;
+  padding: clamp(30px, 4vw, 50px) 0 clamp(76px, 9vw, 120px);
 }
 
 /* ── Top — full width centered ── */
@@ -29,7 +29,8 @@
 
 .about__para {
   font-size: 16px;
-  color: var(--ink-soft);
+  color: var(--ink);
+  font-weight: 500;
   line-height: 1.85;
   margin-bottom: 18px;
   text-align: center;
@@ -131,8 +132,9 @@
 }
 
 .about__why-text {
-  font-size: 14px;
-  color: var(--ink-soft);
+  font-size: 14.5px;
+  color: var(--ink);
+  font-weight: 500;
   line-height: 1.75;
   transition: color 0.35s ease;
 }

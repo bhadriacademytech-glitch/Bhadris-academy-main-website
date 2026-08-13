@@ -1,6 +1,9 @@
 /* ------------------------------------------------------------------
    SITE CONFIG — edit everything in one place
    ------------------------------------------------------------------ */
+
+const opt = (url, w) => url.replace('/upload/', `/upload/f_auto,q_auto,w_${w}/`)
+
 export const SITE = {
   name: "Bhadri's Academy",
   tagline: 'Bengaluru',
@@ -32,15 +35,14 @@ export const PARENT_REELS = [
   { src: '/Video-578.mp4', poster: '', tag: 'Parent of Student' },
 ]
 
-
 export const GALLERY = [
-  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786525008/IMG_2734_wjrxsd.jpg', label: '', cls: 'gitem--w' },
-  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1785495384/IMG_2251_tlhmy2.jpg', label: '', cls: 'gitem--t' },
-  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1785495383/IMG_2326_zhsmgn.jpg', label: '', cls: '' },
-  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1785495384/IMG_2327_okwxl6.jpg', label: '', cls: '' },
-  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786525400/IMG_2741_ad5xnu.jpg', label: '', cls: '' },
-  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786525004/IMG_2328_f9azv1.jpg', label: '', cls: '' },
-  { img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786525009/IMG_2719_e3ftgh.jpg', label: '', cls: 'gitem--w' },
+  { img: opt('https://res.cloudinary.com/pcgf67hy/image/upload/v1786525008/IMG_2734_wjrxsd.jpg', 900), label: '', cls: 'gitem--w' },
+  { img: opt('https://res.cloudinary.com/pcgf67hy/image/upload/v1785495384/IMG_2251_tlhmy2.jpg', 700), label: '', cls: 'gitem--t' },
+  { img: opt('https://res.cloudinary.com/pcgf67hy/image/upload/v1785495383/IMG_2326_zhsmgn.jpg', 500), label: '', cls: '' },
+  { img: opt('https://res.cloudinary.com/pcgf67hy/image/upload/v1785495384/IMG_2327_okwxl6.jpg', 500), label: '', cls: '' },
+  { img: opt('https://res.cloudinary.com/pcgf67hy/image/upload/v1786525400/IMG_2741_ad5xnu.jpg', 500), label: '', cls: '' },
+  { img: opt('https://res.cloudinary.com/pcgf67hy/image/upload/v1786525004/IMG_2328_f9azv1.jpg', 500), label: '', cls: '' },
+  { img: opt('https://res.cloudinary.com/pcgf67hy/image/upload/v1786525009/IMG_2719_e3ftgh.jpg', 900), label: '', cls: 'gitem--w' },
 ]
 
 export const waLink = (text) =>
