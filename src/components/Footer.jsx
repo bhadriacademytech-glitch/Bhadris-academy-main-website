@@ -126,12 +126,17 @@ export default function Footer() {
       </div>
 
       <div className="footer__bottom">
-        <div className="container">
+        <div className="container footer__bottom-inner">
           <span className="footer__copy">
             © {new Date().getFullYear()} {SITE.name}. All rights reserved.
           </span>
+          <div className="footer__legal">
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms-of-service">Terms of Service</a>
+          </div>
         </div>
       </div>
+ 
 
     </footer>
   )

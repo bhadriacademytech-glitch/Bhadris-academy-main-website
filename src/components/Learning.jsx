@@ -19,7 +19,8 @@ export const PROGRAMS = [
       'Regular practice and reinforcement',
       'Parent progress updates',
     ],
-    img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786601865/IMG_3034_ky9wxt.jpg',
+    img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1787253555/ChatGPT_Image_Aug_20_2026_09_00_00_PM_lrdtqc.png',
+    focus: 'center 30%', // ← adjust per-photo focal point (keeps faces/subject in frame at any width)
     color: '#c6a75e',
   },
   {
@@ -35,7 +36,8 @@ export const PROGRAMS = [
       'Individual attention to learning gaps',
       'Progress monitoring and parent updates',
     ],
-    img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786603269/Gemini_Generated_Image_neoptjneoptjneop_qyofi9.png',
+    img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1787253557/ChatGPT_Image_Aug_20_2026_07_44_48_PM_qsxnmy.png',
+    focus: 'center 30%',
     color: '#2e6fb7',
   },
   {
@@ -53,7 +55,8 @@ export const PROGRAMS = [
       'Individual progress monitoring',
       'Regular parent updates',
     ],
-    img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786603580/Gemini_Generated_Image_es4nlxes4nlxes4n_mkatc9.png',
+    img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1787253557/ChatGPT_Image_Aug_20_2026_07_45_44_PM_dxrt3l.png',
+    focus: 'center 20%', // faces near top of this one, per your screenshot
     color: '#1a3a6b',
   },
   {
@@ -73,7 +76,8 @@ export const PROGRAMS = [
       'Individual progress tracking',
       'Regular academic progress updates to parents',
     ],
-    img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786604027/Gemini_Generated_Image_kjd082kjd082kjd0_cavukr.png',
+    img: 'https://res.cloudinary.com/pcgf67hy/image/upload/v1787253557/IMG_3268_wfyjy5.jpg',
+    focus: 'center 30%',
     color: '#14264b',
   },
 ]
@@ -110,7 +114,8 @@ export default function Learning() {
               key={p.title}
               className="learning__feature-img"
               style={{
-                backgroundImage: loaded.has(i) ? 'url(' + opt(p.img, 1200) + ')' : 'none',
+                backgroundImage: loaded.has(i) ? 'url(' + opt(p.img, 1400) + ')' : 'none',
+                backgroundPosition: p.focus || 'center',
                 opacity: i === featured ? 1 : 0,
               }}
             />
@@ -131,14 +136,20 @@ export default function Learning() {
             </div>
 
             <div className="learning__thumbs">
-              {others.map(({ i, title, label, img }) => (
+              {others.map(({ i, title, label, img, focus }) => (
                 <button
                   key={title}
                   className="lthumb"
                   onClick={() => select(i)}
                   aria-label={'Switch to ' + label}
                 >
-                  <div className="lthumb__img" style={{ backgroundImage: 'url(' + opt(img, 300) + ')' }} />
+                  <div
+                    className="lthumb__img"
+                    style={{
+                      backgroundImage: 'url(' + opt(img, 400) + ')',
+                      backgroundPosition: focus || 'center',
+                    }}
+                  />
                   <div className="lthumb__label">
                     <span className="lthumb__label-text">{label}</span>
                     <span className="lthumb__arrow">→</span>

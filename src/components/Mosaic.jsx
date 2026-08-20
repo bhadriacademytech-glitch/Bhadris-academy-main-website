@@ -2,7 +2,7 @@ import useReveal from './useReveal.js'
 
 const opt = (url, w) => url.replace('/upload/', `/upload/f_auto,q_auto,w_${w}/`)
 
-const PHOTO_URL = 'https://res.cloudinary.com/pcgf67hy/image/upload/v1786525400/IMG_2741_ad5xnu.jpg'
+const PHOTO_URL = 'https://res.cloudinary.com/pcgf67hy/image/upload/v1787253555/ChatGPT_Image_Aug_20_2026_07_47_33_PM_z3flkq.png'
 
 const TILES = [
   { type: 'navy', num: '2', label: 'Branches across Bengaluru' },

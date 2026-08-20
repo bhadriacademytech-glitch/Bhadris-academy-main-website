@@ -15,11 +15,14 @@ import ProgramModal from './components/ProgramModal.jsx'
 import ApplicationModal from './components/ApplicationModal.jsx'
 import VisitModal from './components/VisitModal.jsx'
 import WhatsAppFloat from './components/WhatsAppFloat.jsx'
+import BackgroundLogo from './components/BackgroundLogo.jsx'
+import PrivacyPolicy from './components/PrivacyPolicy.jsx'
 
 function Site() {
   const { modal } = useModal()
   return (
     <>
+      <BackgroundLogo />
       <Header />
       <main>
         <Hero />
@@ -44,6 +47,13 @@ function Site() {
 }
 
 export default function App() {
+  // No router library — just check the URL path directly.
+  const path = window.location.pathname
+
+  if (path === '/privacy-policy') {
+    return <PrivacyPolicy />
+  }
+
   return (
     <ModalProvider>
       <Site />

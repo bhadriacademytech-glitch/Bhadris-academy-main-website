@@ -1,0 +1,48 @@
+/* Fixed background layer — sits behind all page content */
+.bg-logo-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-logo-inner {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  opacity: 0.06;
+  color: #14264b; /* match your brand navy, e.g. same as founder card accents */
+}
+
+@media (min-width: 768px) {
+  .bg-logo-inner {
+    width: 750px;
+    height: 750px;
+  }
+}
+
+.bg-logo-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: bg-logo-spin 40s linear infinite;
+}
+
+.bg-logo-img {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 55%;
+  height: 55%;
+  object-fit: contain;
+}
+
+@keyframes bg-logo-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}

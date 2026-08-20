@@ -13,13 +13,15 @@
   font-weight: 500;
 }
 
-/* ── Feature card ── */
+/* ── Feature card — aspect-ratio driven, not fixed min-height ── */
 .learning__feature {
   margin-top: clamp(28px, 4vw, 48px);
   position: relative;
   isolation: isolate;
   color: var(--white);
   overflow: hidden;
+  aspect-ratio: 16 / 9;
+  max-height: 640px;
 }
 
 .learning__feature-img {
@@ -27,7 +29,8 @@
   inset: 0;
   z-index: -2;
   background-size: cover;
-  background-position: center;
+  background-repeat: no-repeat;
+  /* background-position now set per-image via inline style (focal point) */
   transition: opacity 0.7s ease;
 }
 
@@ -54,7 +57,8 @@
   flex-wrap: wrap;
   gap: clamp(24px, 3vw, 40px);
   padding: clamp(28px, 5vw, 64px) clamp(20px, 4vw, 56px);
-  min-height: clamp(380px, 42vw, 520px);
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .learning__feature-body {
@@ -109,7 +113,7 @@
   border-color: var(--gold);
 }
 
-/* ── Inline thumbnails — the other programs, sitting on the image ── */
+/* ── Inline thumbnails — aspect-ratio boxes instead of fixed height ── */
 .learning__thumbs {
   display: flex;
   gap: 14px;
@@ -118,7 +122,7 @@
 }
 
 .lthumb {
-  width: 130px;
+  width: clamp(96px, 9vw, 130px);
   display: flex;
   flex-direction: column;
   background: none;
@@ -129,10 +133,10 @@
 }
 
 .lthumb__img {
-  height: 100px;
+  aspect-ratio: 4 / 3;
   width: 100%;
   background-size: cover;
-  background-position: center;
+  background-repeat: no-repeat;
   transition: transform 0.4s ease;
   border-bottom: 3px solid var(--gold);
   overflow: hidden;
@@ -173,18 +177,24 @@
    RESPONSIVE
    ============================================================ */
 
+@media (max-width: 1100px) {
+  .learning__feature { aspect-ratio: 4 / 3; }
+}
+
 @media (max-width: 900px) {
-  .learning__feature-row { min-height: clamp(340px, 40vw, 420px); }
-  .lthumb { width: 110px; }
-  .lthumb__img { height: 84px; }
-  .lthumb__label-text { font-size: 9px; }
+  .learning__feature { aspect-ratio: 3 / 4; max-height: none; }
 }
 
 @media (max-width: 600px) {
+  .learning__feature {
+    aspect-ratio: auto;
+    height: auto;
+  }
+
   .learning__feature-row {
     flex-direction: column;
     align-items: stretch;
-    min-height: 0;
+    height: auto;
     padding: 24px 0 0;
   }
 
@@ -209,6 +219,7 @@
     position: absolute;
     inset: 0;
     height: 100%;
+    aspect-ratio: auto;
     border-bottom: none;
   }
 

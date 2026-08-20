@@ -189,16 +189,42 @@
 }
 .footer__ariar-link:hover { color: var(--gold); }
 
-/* ── Copyright ── */
+/* ── Copyright bar — light, split layout ── */
 .footer__bottom {
-  background: var(--navy);
-  padding: 16px 0;
-  text-align: center;
+  background: var(--white);
+  border-top: 1px solid var(--line);
+  padding: 26px 0;
+}
+
+.footer__bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .footer__copy {
-  font-size: 12.5px;
-  color: rgba(255, 255, 255, 0.55);
+  font-size: 13.5px;
+  color: var(--ink);
+  opacity: 0.75;
+}
+
+.footer__legal {
+  display: flex;
+  gap: 28px;
+}
+
+.footer__legal a {
+  font-size: 13.5px;
+  color: var(--ink);
+  opacity: 0.75;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+.footer__legal a:hover {
+  color: var(--gold);
+  opacity: 1;
 }
 
 /* ── Responsive ── */
@@ -214,4 +240,5 @@
 @media (max-width: 600px) {
   .footer__grid { grid-template-columns: 1fr; gap: 36px; }
   .footer__bottom { padding-bottom: calc(var(--mobile-nav-h) + 12px); }
+  .footer__bottom-inner { flex-direction: column; align-items: flex-start; }
 }
