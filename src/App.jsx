@@ -16,7 +16,7 @@ import ApplicationModal from './components/ApplicationModal.jsx'
 import VisitModal from './components/VisitModal.jsx'
 import WhatsAppFloat from './components/WhatsAppFloat.jsx'
 import BackgroundLogo from './components/BackgroundLogo.jsx'
-import PrivacyPolicy from './components/PrivacyPolicy.jsx'
+import PrivacyPolicy from './components/Privacypolicy.jsx'
 
 function Site() {
   const { modal } = useModal()

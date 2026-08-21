@@ -1,5 +1,5 @@
 import { SITE } from '../config.js'
-import '../styles/LegalPage.css'
+import '../styles/Legalpage.css'
 
 export default function PrivacyPolicy() {
   return (
